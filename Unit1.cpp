@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "Unit1.h"
+#include "Unit4.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -14,3 +15,9 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::Button7Click(TObject *Sender)
+{
+	Form4->ShowModal();
+}
+//---------------------------------------------------------------------------
+

@@ -3,7 +3,7 @@ object Form4: TForm4
   Top = 0
   Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072
   ClientHeight = 441
-  ClientWidth = 924
+  ClientWidth = 855
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,9 +14,9 @@ object Form4: TForm4
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
-    Left = -5
+    Left = 0
     Top = 0
-    Width = 934
+    Width = 856
     Height = 441
     Picture.Data = {
       0A544A504547496D616765D47A0400FFD8FFE1001845786966000049492A0008
@@ -9196,5 +9196,111 @@ object Form4: TForm4
       6CDE63E1C1B81766C7D95630969BDDFDD74CD9FDE9BC59F365F2D8BB72F4ABE1
       A7FFD9}
     Stretch = True
+  end
+  object ComboBox1: TComboBox
+    Left = 96
+    Top = 120
+    Width = 105
+    Height = 27
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    Text = #1042#1080#1076' '#1086#1087#1083#1072#1090#1099
+    Items.Strings = (
+      #1043#1086#1089#1073#1102#1076#1078#1077#1090
+      #1050#1086#1084#1084#1077#1088#1095#1077#1089#1082#1072#1103)
+  end
+  object Panel1: TPanel
+    Left = 72
+    Top = 16
+    Width = 729
+    Height = 65
+    Color = clActiveCaption
+    ParentBackground = False
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 8
+      Top = 24
+      Width = 63
+      Height = 19
+      Caption = #1060#1072#1084#1080#1083#1080#1103
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 216
+      Top = 24
+      Width = 28
+      Height = 19
+      Caption = #1048#1084#1103
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 599
+      Top = 24
+      Width = 69
+      Height = 19
+      Caption = #8470' '#1075#1088#1091#1087#1087#1099
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 385
+      Top = 24
+      Width = 64
+      Height = 19
+      Caption = #1054#1090#1095#1077#1089#1090#1074#1086
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Edit4: TEdit
+      Left = 679
+      Top = 25
+      Width = 34
+      Height = 21
+      TabOrder = 0
+    end
+    object Edit1: TEdit
+      Left = 77
+      Top = 25
+      Width = 121
+      Height = 21
+      TabOrder = 1
+    end
+    object Edit2: TEdit
+      Left = 250
+      Top = 25
+      Width = 121
+      Height = 21
+      TabOrder = 2
+    end
+    object Edit3: TEdit
+      Left = 455
+      Top = 25
+      Width = 121
+      Height = 21
+      TabOrder = 3
+    end
   end
 end
