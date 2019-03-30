@@ -102,7 +102,28 @@
             <DependentOn>Unit1.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Unit2.cpp">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Unit2.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Unit3.cpp">
+            <Form>Form3</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Unit3.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Unit4.cpp">
+            <Form>Form4</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Unit4.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
         <FormResources Include="Unit1.dfm"/>
+        <FormResources Include="Unit2.dfm"/>
+        <FormResources Include="Unit3.dfm"/>
+        <FormResources Include="Unit4.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
