@@ -9494,13 +9494,14 @@ object Form4: TForm4
     Font.Style = []
     ParentFont = False
     TabOrder = 4
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 424
     Top = 376
     Width = 108
     Height = 39
-    Caption = #1042#1099#1093#1086#1076
+    Caption = #1047#1072#1082#1088#1099#1090#1100
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -9508,5 +9509,6 @@ object Form4: TForm4
     Font.Style = []
     ParentFont = False
     TabOrder = 5
+    OnClick = Button2Click
   end
 end

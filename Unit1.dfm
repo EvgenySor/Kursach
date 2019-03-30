@@ -285,7 +285,7 @@ object Form1: TForm1
     ColCount = 13
     DefaultColWidth = 80
     FixedCols = 0
-    RowCount = 10
+    RowCount = 1
     FixedRows = 0
     TabOrder = 13
   end
