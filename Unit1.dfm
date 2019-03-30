@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1043#1083#1072#1074#1085#1099#1081' '#1101#1082#1088#1072#1085
-  ClientHeight = 398
+  ClientHeight = 529
   ClientWidth = 1073
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,14 +12,15 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
     Left = 16
     Top = 16
     Width = 113
-    Height = 57
-    Caption = #1053#1086#1074#1099#1081' '#1083#1080#1089#1090
+    Height = 59
+    Caption = #1053#1086#1074#1072#1103' '#1090#1072#1073#1083#1080#1094#1072
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -278,14 +279,23 @@ object Form1: TForm1
   end
   object StringGrid1: TStringGrid
     Left = 16
-    Top = 97
+    Top = 96
     Width = 882
-    Height = 287
+    Height = 297
     ColCount = 13
+    DefaultColWidth = 80
     FixedCols = 0
     RowCount = 10
     FixedRows = 0
-    ScrollBars = ssVertical
     TabOrder = 13
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 328
+    Top = 64
+  end
+  object OpenDialog1: TOpenDialog
+    Title = #1057#1086#1079#1076#1072#1090#1100' '#1085#1086#1074#1099#1081' '#1092#1072#1081#1083
+    Left = 280
+    Top = 64
   end
 end
