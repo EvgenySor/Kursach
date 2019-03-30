@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.473,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.234,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.275,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.515,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2019.03.30 13:43:22.575,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2019.03.30 13:43:22.728,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2019.03.30 13:43:47.435,E:\C++\Kursach\Unit1.dfm=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2019.03.30 13:43:47.435,E:\C++\Kursach\Unit1.h=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2019.03.30 13:43:47.435,E:\C++\Kursach\Unit1.cpp=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2019.03.30 13:43:51.323,E:\C++\Kursach\Project1PCH1.h=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2019.03.30 13:43:53.449,E:\C++\Kursach\Project1.cbproj=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
