@@ -274,6 +274,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 12
+    OnClick = Button13Click
   end
   object StringGrid1: TStringGrid
     Left = 16

@@ -21,3 +21,8 @@ void __fastcall TForm1::Button7Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::Button13Click(TObject *Sender)
+{
+	MessageDlg("Автор приложения студент группы ИСТ-11 Сорочук Евгений, БарГу", mtInformation, TMsgDlgButtons() << mbCancel  ,0);
+}
+
