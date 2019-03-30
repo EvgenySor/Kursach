@@ -24,6 +24,18 @@ __published:	// IDE-managed Components
 	TEdit *Edit4;
 	TComboBox *ComboBox1;
 	TPanel *Panel1;
+	TPanel *Panel2;
+	TComboBox *ComboBox2;
+	TComboBox *ComboBox3;
+	TComboBox *ComboBox4;
+	TComboBox *ComboBox5;
+	TComboBox *ComboBox6;
+	TPanel *Panel3;
+	TComboBox *ComboBox7;
+	TComboBox *ComboBox8;
+	TComboBox *ComboBox9;
+	TButton *Button1;
+	TButton *Button2;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm4(TComponent* Owner);
