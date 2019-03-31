@@ -145,11 +145,11 @@ object Form1: TForm1
   end
   object SaveDialog1: TSaveDialog
     Left = 144
-    Top = 64
+    Top = 400
   end
   object OpenDialog1: TOpenDialog
     Title = #1057#1086#1079#1076#1072#1090#1100' '#1085#1086#1074#1099#1081' '#1092#1072#1081#1083
-    Left = 104
-    Top = 64
+    Left = 88
+    Top = 400
   end
 end

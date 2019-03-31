@@ -5,7 +5,9 @@
 
 #include "Unit1.h"
 #include "Unit2.h"
+#include "Unit3.h"
 #include "Unit4.h"
+#include "Unit5.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -49,8 +51,6 @@ void __fastcall TForm1::Button6Click(TObject *Sender)
 	ShowMessage("Корректирование таблицы разрешено!");
 }
 //---------------------------------------------------------------------------
-
-
 void __fastcall TForm1::Button4Click(TObject *Sender)
 {
 	Form2->Show();
