@@ -141,6 +141,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 8
+    OnClick = Button4Click
   end
   object SaveDialog1: TSaveDialog
     Left = 144

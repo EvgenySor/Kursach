@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "Unit1.h"
+#include "Unit2.h"
 #include "Unit4.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -49,4 +50,10 @@ void __fastcall TForm1::Button6Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+	Form2->Show();
+}
+//---------------------------------------------------------------------------
 
