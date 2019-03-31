@@ -17,30 +17,18 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TButton *Button2;
 	TButton *Button3;
-	TButton *Button4;
-	TLabel *Label1;
-	TEdit *Edit1;
-	TButton *Button5;
-	TPanel *Panel1;
-	TPanel *Panel2;
-	TLabel *Label2;
-	TLabel *Label3;
-	TEdit *Edit2;
-	TEdit *Edit3;
-	TButton *Button6;
 	TButton *Button7;
-	TButton *Button8;
-	TButton *Button9;
-	TButton *Button10;
-	TButton *Button11;
 	TButton *Button12;
 	TButton *Button13;
 	TStringGrid *StringGrid1;
 	TSaveDialog *SaveDialog1;
 	TOpenDialog *OpenDialog1;
+	TButton *Button6;
+	TButton *Button4;
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall Button13Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall Button6Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

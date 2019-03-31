@@ -10,8 +10,6 @@
 #pragma resource "*.dfm"
 TForm4 *Form4;
 //---------------------------------------------------------------------------
-int rowsCounter = 1;
-//---------------------------------------------------------------------------
 __fastcall TForm4::TForm4(TComponent* Owner)
 	: TForm(Owner)
 {
@@ -19,6 +17,8 @@ __fastcall TForm4::TForm4(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button1Click(TObject *Sender)
 {
+	int rowsCounter;
+	rowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 	Form1->StringGrid1->Cells[0][rowsCounter] = Form4->Edit1->Text;
 	Form1->StringGrid1->Cells[1][rowsCounter] = Form4->Edit2->Text;
 	Form1->StringGrid1->Cells[2][rowsCounter] = Form4->Edit3->Text;
@@ -36,7 +36,6 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
 	Form1->StringGrid1->RowCount++;
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm4::Button2Click(TObject *Sender)
 {
 	Close();

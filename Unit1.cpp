@@ -17,16 +17,14 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button7Click(TObject *Sender)
 {
-	Form4->ShowModal();
+	Form4->Show();
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::Button13Click(TObject *Sender)
 {
 	MessageDlg("Автор приложения студент группы ИСТ-11 Сорочук Евгений, БарГу", mtInformation, TMsgDlgButtons() << mbCancel  ,0);
 }
-
-
+//---------------------------------------------------------------------------
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	StringGrid1->Cells[0][0] = "Фамилия";
@@ -44,6 +42,11 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	StringGrid1->Cells[12][0] = "Вид оплаты";
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+	StringGrid1->Options = StringGrid1->Options << goEditing;
+	ShowMessage("Корректирование таблицы разрешено!");
+}
+//---------------------------------------------------------------------------
 
 
