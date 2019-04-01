@@ -57,21 +57,5 @@ object Form2: TForm2
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    OnClick = Button3Click
-  end
-  object Button4: TButton
-    Left = 48
-    Top = 168
-    Width = 281
-    Height = 33
-    Caption = #1054#1073#1097#1080#1081' '#1089#1088#1077#1076#1085#1080#1081' '#1073#1072#1083#1083' '#1075#1088#1091#1087#1087#1099
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Times New Roman'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-    OnClick = Button4Click
   end
 end
