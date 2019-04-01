@@ -18,18 +18,19 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+void countAverageMark(float, int);
+//---------------------------------------------------------------------------
 void __fastcall TForm2::Button1Click(TObject *Sender)
 {
 	Form5->ShowModal();
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm2::Button2Click(TObject *Sender)
 {
 	int form1RowsCounter, form1CollsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
 	float averageMarkExam1 = 0,  // Средний балл за экзамен1      // считаных конструкцией if строк
-		  averageMarkExam2 = 0,  // Средний балл за экзамен2
-		  averageMarkExam3 = 0;  // Средний балл за экзамен3
+		 averageMarkExam2 = 0,  // Средний балл за экзамен2
+		 averageMarkExam3 = 0;  // Средний балл за экзамен3
 
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 	form1CollsCounter = StrToInt(Form1->StringGrid1->ColCount);
@@ -41,7 +42,6 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
 			sortRowsCounter++;
 		}
 	averageMarkExam1 = averageMarkExam1 / sortRowsCounter;
-	ShowMessage("Средний бал за экзамен1: " + FloatToStr(averageMarkExam1));
 	sortRowsCounter = 0;
 
 	for (int i = 1; i < form1RowsCounter; i++)
@@ -51,7 +51,6 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
 			sortRowsCounter++;
 		}
 	averageMarkExam2 = averageMarkExam2 / sortRowsCounter;
-	ShowMessage("Средний бал за экзамен2: " + FloatToStr(averageMarkExam2));
 	sortRowsCounter = 0;
 
 	for (int i = 1; i < form1RowsCounter; i++)
@@ -61,8 +60,10 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
 			sortRowsCounter++;
 		}
 	averageMarkExam3 = averageMarkExam3 / sortRowsCounter;
-	ShowMessage("Средний бал за экзамен3: " + FloatToStr(averageMarkExam3));
 	sortRowsCounter = 0;
+
+	ShowMessage("Средний балл за экзамен1: " + FloatToStrF(averageMarkExam1,ffFixed,3,2) + "\n"
+	"Средний балл за экзамен2: " + FloatToStrF(averageMarkExam2,ffFixed,3,2) + "\n"
+	"Средний балл за экзамен3: " + FloatToStrF(averageMarkExam3,ffFixed,3,2));
 }
 //---------------------------------------------------------------------------
-
