@@ -10,6 +10,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Grids.hpp>
 #include <Vcl.Dialogs.hpp>
+#include <Vcl.Menus.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -25,6 +26,7 @@ __published:	// IDE-managed Components
 	TOpenDialog *OpenDialog1;
 	TButton *Button6;
 	TButton *Button4;
+	TMainMenu *MainMenu1;
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall Button13Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);

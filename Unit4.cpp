@@ -19,10 +19,10 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
 {
 	int rowsCounter;
 	rowsCounter = StrToInt(Form1->StringGrid1->RowCount);
-	Form1->StringGrid1->Cells[0][rowsCounter] = Form4->Edit1->Text;
-	Form1->StringGrid1->Cells[1][rowsCounter] = Form4->Edit2->Text;
-	Form1->StringGrid1->Cells[2][rowsCounter] = Form4->Edit3->Text;
-	Form1->StringGrid1->Cells[3][rowsCounter] = Form4->Edit4->Text;
+	Form1->StringGrid1->Cells[0][rowsCounter] = Edit1->Text;
+	Form1->StringGrid1->Cells[1][rowsCounter] = Edit2->Text;
+	Form1->StringGrid1->Cells[2][rowsCounter] = Edit3->Text;
+	Form1->StringGrid1->Cells[3][rowsCounter] = Edit4->Text;
 	Form1->StringGrid1->Cells[4][rowsCounter] = Form4->ComboBox2->Text;
 	Form1->StringGrid1->Cells[5][rowsCounter] = Form4->ComboBox3->Text;
 	Form1->StringGrid1->Cells[6][rowsCounter] = Form4->ComboBox4->Text;
@@ -34,6 +34,11 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
 	Form1->StringGrid1->Cells[12][rowsCounter] = Form4->ComboBox1->Text;
 	rowsCounter++;
 	Form1->StringGrid1->RowCount++;
+	Edit1->Text = ""; Edit2->Text = ""; Edit3->Text = ""; Edit4->Text = "";
+	ComboBox1->ItemIndex = "-1";  ComboBox2->ItemIndex = "-1";  ComboBox3->ItemIndex = "-1";
+	ComboBox4->ItemIndex = "-1"; ComboBox5->ItemIndex = "-1"; ComboBox6->ItemIndex = "-1";
+	ComboBox7->ItemIndex = "-1"; ComboBox8->ItemIndex = "-1"; ComboBox9->ItemIndex = "-1";
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button2Click(TObject *Sender)

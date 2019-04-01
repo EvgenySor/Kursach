@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
@@ -151,5 +152,9 @@ object Form1: TForm1
     Title = #1057#1086#1079#1076#1072#1090#1100' '#1085#1086#1074#1099#1081' '#1092#1072#1081#1083
     Left = 88
     Top = 400
+  end
+  object MainMenu1: TMainMenu
+    Left = 672
+    Top = 432
   end
 end
