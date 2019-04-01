@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1043#1083#1072#1074#1085#1099#1081' '#1101#1082#1088#1072#1085
-  ClientHeight = 529
+  ClientHeight = 569
   ClientWidth = 935
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -154,7 +154,7 @@ object Form1: TForm1
     Top = 400
   end
   object MainMenu1: TMainMenu
-    Left = 672
+    Left = 624
     Top = 432
   end
 end

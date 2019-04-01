@@ -24,3 +24,27 @@ void __fastcall TForm2::Button1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm2::Button2Click(TObject *Sender)
+{
+	int form1RowsCounter, form1CollsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
+	float averageMarkExam1 = 0; // Средний балл за экзамен1      // считаных конструкцией if строк
+
+	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
+	form1CollsCounter = StrToInt(Form1->StringGrid1->ColCount);
+
+	for (int i = 1; i < form1RowsCounter; i++)
+		if(Form1->StringGrid1->Cells[12][i] == "Госбюджет")
+		{
+			averageMarkExam1 += StrToFloat(Form1->StringGrid1->Cells[9][i]);
+			sortRowsCounter++;
+		}
+	averageMarkExam1 = averageMarkExam1 / sortRowsCounter;
+	ShowMessage("Средний бал за экзамен1: " + FloatToStr(averageMarkExam1));
+	sortRowsCounter = 0;
+
+
+
+
+}
+//---------------------------------------------------------------------------
+
