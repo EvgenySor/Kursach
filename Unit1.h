@@ -27,11 +27,22 @@ __published:	// IDE-managed Components
 	TButton *Button6;
 	TButton *Button4;
 	TMainMenu *MainMenu1;
+	TMenuItem *N1;
+	TMenuItem *N2;
+	TMenuItem *N3;
+	TMenuItem *N4;
+	TMenuItem *N5;
+	TMenuItem *N6;
+	TMenuItem *N7;
+	TMenuItem *N8;
+	TMenuItem *N9;
+	TMenuItem *N10;
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall Button13Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

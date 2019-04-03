@@ -41,7 +41,7 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
 			averageMarkExam1 += StrToFloat(Form1->StringGrid1->Cells[9][i]);
 			sortRowsCounter++;
 		}
-	averageMarkExam1 = averageMarkExam1 / sortRowsCounter;
+	averageMarkExam1 /= sortRowsCounter;
 	sortRowsCounter = 0;
 
 	for (int i = 1; i < form1RowsCounter; i++)
@@ -50,7 +50,7 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
 			averageMarkExam2 += StrToFloat(Form1->StringGrid1->Cells[10][i]);
 			sortRowsCounter++;
 		}
-	averageMarkExam2 = averageMarkExam2 / sortRowsCounter;
+	averageMarkExam2 /= sortRowsCounter;
 	sortRowsCounter = 0;
 
 	for (int i = 1; i < form1RowsCounter; i++)
@@ -59,7 +59,7 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
 			averageMarkExam3 += StrToFloat(Form1->StringGrid1->Cells[11][i]);
 			sortRowsCounter++;
 		}
-	averageMarkExam3 = averageMarkExam3 / sortRowsCounter;
+	averageMarkExam3 /= sortRowsCounter;
 	sortRowsCounter = 0;
 
 	ShowMessage("Средний балл за экзамен1: " + FloatToStrF(averageMarkExam1,ffFixed,3,2) + "\n"
@@ -82,7 +82,7 @@ void __fastcall TForm2::Button3Click(TObject *Sender)
 			averageMarkExam1 += StrToFloat(Form1->StringGrid1->Cells[9][i]);
 			sortRowsCounter++;
 		}
-	averageMarkExam1 = averageMarkExam1 / sortRowsCounter;
+	averageMarkExam1 /= sortRowsCounter;
 	sortRowsCounter = 0;
 
 	for (int i = 1; i < form1RowsCounter; i++)
@@ -91,7 +91,7 @@ void __fastcall TForm2::Button3Click(TObject *Sender)
 			averageMarkExam2 += StrToFloat(Form1->StringGrid1->Cells[10][i]);
 			sortRowsCounter++;
 		}
-	averageMarkExam2 = averageMarkExam2 / sortRowsCounter;
+	averageMarkExam2 /= sortRowsCounter;
 	sortRowsCounter = 0;
 
 	for (int i = 1; i < form1RowsCounter; i++)
@@ -100,7 +100,7 @@ void __fastcall TForm2::Button3Click(TObject *Sender)
 			averageMarkExam3 += StrToFloat(Form1->StringGrid1->Cells[11][i]);
 			sortRowsCounter++;
 		}
-	averageMarkExam3 = averageMarkExam3 / sortRowsCounter;
+	averageMarkExam3 /= sortRowsCounter;
 	sortRowsCounter = 0;
 
 	ShowMessage("Средний балл за экзамен1: " + FloatToStrF(averageMarkExam1,ffFixed,3,2) + "\n"
@@ -108,17 +108,23 @@ void __fastcall TForm2::Button3Click(TObject *Sender)
 	"Средний балл за экзамен3: " + FloatToStrF(averageMarkExam3,ffFixed,3,2));
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm2::Button4Click(TObject *Sender)
 {
-	/*int form1RowsCounter;
+	int form1RowsCounter, MarkCounter = 0;
+	float groupAverangeMark = 0;
+
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 
 	for (int i = 1; i < form1RowsCounter; i++)
-		if (true) {
-
+		if(Form5->Edit1->Text == Form1->StringGrid1->Cells[3][i])
+		{
+			groupAverangeMark += StrToFloat(Form1->StringGrid1->Cells[9][i]);
+			groupAverangeMark += StrToFloat(Form1->StringGrid1->Cells[10][i]);
+			groupAverangeMark += StrToFloat(Form1->StringGrid1->Cells[11][i]);
+			MarkCounter += 3;
 		}
-    */
+	groupAverangeMark /= MarkCounter;
+	ShowMessage("Общий балл группы " + Form5->Edit1->Text + FloatToStrF(groupAverangeMark,ffFixed,3,2));
 }
 //---------------------------------------------------------------------------
 
