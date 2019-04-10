@@ -13,7 +13,6 @@
 class TForm4 : public TForm
 {
 __published:	// IDE-managed Components
-	TImage *Image1;
 	TLabel *Label1;
 	TLabel *Label2;
 	TLabel *Label3;
@@ -23,19 +22,17 @@ __published:	// IDE-managed Components
 	TEdit *Edit3;
 	TEdit *Edit4;
 	TComboBox *ComboBox1;
-	TPanel *Panel1;
-	TPanel *Panel2;
 	TComboBox *ComboBox2;
 	TComboBox *ComboBox3;
 	TComboBox *ComboBox4;
 	TComboBox *ComboBox5;
 	TComboBox *ComboBox6;
-	TPanel *Panel3;
 	TComboBox *ComboBox7;
 	TComboBox *ComboBox8;
 	TComboBox *ComboBox9;
 	TButton *Button1;
 	TButton *Button2;
+	TGroupBox *GroupBox1;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations

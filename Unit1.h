@@ -31,7 +31,6 @@ __published:	// IDE-managed Components
 	TMenuItem *N10;
 	TMenuItem *N11;
 	TMenuItem *N12;
-	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall N5Click(TObject *Sender);
 	void __fastcall N11Click(TObject *Sender);

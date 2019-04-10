@@ -17,11 +17,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::Button7Click(TObject *Sender)
-{
-	Form4->Show();
-}
-//---------------------------------------------------------------------------
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	StringGrid1->Cells[0][0] = "Фамилия"; StringGrid1->Cells[1][0] = "Имя";
