@@ -59,7 +59,6 @@ void __fastcall TForm1::N7Click(TObject *Sender)
 	Form5->ShowModal();
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::N8Click(TObject *Sender)
 {
 	int form1RowsCounter, form1CollsCounter = 13, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
@@ -67,10 +66,52 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 		 averageMarkExam2 = 0,  // Средний балл за экзамен2
 		 averageMarkExam3 = 0;  // Средний балл за экзамен3
 
+	form1RowsCounter = StrToInt(StringGrid1->RowCount);
+
+	for (int i = 1; i < form1RowsCounter; i++)
+		if(StringGrid1->Cells[12][i] == "Госбюджет")
+		{
+			averageMarkExam1 += StrToFloat(StringGrid1->Cells[9][i]);
+			sortRowsCounter++;
+		}
+	averageMarkExam1 /= sortRowsCounter;
+	sortRowsCounter = 0;
+
+	for (int i = 1; i < form1RowsCounter; i++)
+		if(StringGrid1->Cells[12][i] == "Госбюджет")
+		{
+			averageMarkExam2 += StrToFloat(StringGrid1->Cells[10][i]);
+			sortRowsCounter++;
+		}
+	averageMarkExam2 /= sortRowsCounter;
+	sortRowsCounter = 0;
+
+	for (int i = 1; i < form1RowsCounter; i++)
+		if(StringGrid1->Cells[12][i] == "Госбюджет")
+		{
+			averageMarkExam3 += StrToFloat(StringGrid1->Cells[11][i]);
+			sortRowsCounter++;
+		}
+	averageMarkExam3 /= sortRowsCounter;
+	sortRowsCounter = 0;
+
+	ShowMessage("Средний балл за экзамен1: " + FloatToStrF(averageMarkExam1,ffFixed,3,2) + "\n"
+	"Средний балл за экзамен2: " + FloatToStrF(averageMarkExam2,ffFixed,3,2) + "\n"
+	"Средний балл за экзамен3: " + FloatToStrF(averageMarkExam3,ffFixed,3,2));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::N9Click(TObject *Sender)
+{
+	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
+	float averageMarkExam1 = 0,  // Средний балл за экзамен1      // считаных конструкцией if строк
+		 averageMarkExam2 = 0,  // Средний балл за экзамен2
+		 averageMarkExam3 = 0;  // Средний балл за экзамен3
+
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 
 	for (int i = 1; i < form1RowsCounter; i++)
-		if(Form1->StringGrid1->Cells[12][i] == "Госбюджет")
+		if(Form1->StringGrid1->Cells[12][i] == "Коммерческая")
 		{
 			averageMarkExam1 += StrToFloat(Form1->StringGrid1->Cells[9][i]);
 			sortRowsCounter++;
@@ -79,7 +120,7 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 	sortRowsCounter = 0;
 
 	for (int i = 1; i < form1RowsCounter; i++)
-		if(Form1->StringGrid1->Cells[12][i] == "Госбюджет")
+		if(Form1->StringGrid1->Cells[12][i] == "Коммерческая")
 		{
 			averageMarkExam2 += StrToFloat(Form1->StringGrid1->Cells[10][i]);
 			sortRowsCounter++;
@@ -88,7 +129,7 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 	sortRowsCounter = 0;
 
 	for (int i = 1; i < form1RowsCounter; i++)
-		if(Form1->StringGrid1->Cells[12][i] == "Госбюджет")
+		if(Form1->StringGrid1->Cells[12][i] == "Коммерческая")
 		{
 			averageMarkExam3 += StrToFloat(Form1->StringGrid1->Cells[11][i]);
 			sortRowsCounter++;
