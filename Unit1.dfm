@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1043#1083#1072#1074#1085#1099#1081' '#1101#1082#1088#1072#1085
-  ClientHeight = 301
+  ClientHeight = 300
   ClientWidth = 901
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -49,6 +49,7 @@ object Form1: TForm1
     end
     object N3: TMenuItem
       Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
+      OnClick = N3Click
     end
     object N4: TMenuItem
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072

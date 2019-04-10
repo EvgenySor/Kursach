@@ -1,9 +1,10 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
+#include <stdio.h>
 #pragma hdrstop
 
 #include "Unit1.h"
-#include "Unit2.h"
+//#include "Unit2.h"
 #include "Unit3.h"
 #include "Unit4.h"
 #include "Unit5.h"
@@ -56,7 +57,7 @@ void __fastcall TForm1::N7Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::N8Click(TObject *Sender)
 {
-	int form1RowsCounter, form1CollsCounter = 13, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
+	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
 	float averageMarkExam1 = 0,  // Средний балл за экзамен1          // считаных конструкцией if строк
 		 averageMarkExam2 = 0,  // Средний балл за экзамен2
 		 averageMarkExam3 = 0;  // Средний балл за экзамен3
@@ -135,6 +136,18 @@ void __fastcall TForm1::N9Click(TObject *Sender)
 	ShowMessage("Средний балл за экзамен1: " + FloatToStrF(averageMarkExam1,ffFixed,3,2) + "\n"
 	"Средний балл за экзамен2: " + FloatToStrF(averageMarkExam2,ffFixed,3,2) + "\n"
 	"Средний балл за экзамен3: " + FloatToStrF(averageMarkExam3,ffFixed,3,2));
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::N3Click(TObject *Sender)
+{
+	TStringList *Table1 = new TStringList;
+
+	if (SaveDialog1->Execute())
+		for(int i = 0; i < StringGrid1->RowCount; i++)
+			Table1->Add(StringGrid1->Rows[i]->DelimitedText);
+		Table1->SaveToFile(SaveDialog1->FileName);
+
+	delete Table1;
 }
 //---------------------------------------------------------------------------
 
