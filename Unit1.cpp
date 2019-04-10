@@ -57,10 +57,10 @@ void __fastcall TForm1::N7Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::N8Click(TObject *Sender)
 {
-	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
-	float averageMarkExam1 = 0,  // Средний балл за экзамен1          // считаных конструкцией if строк
-		 averageMarkExam2 = 0,  // Средний балл за экзамен2
-		 averageMarkExam3 = 0;  // Средний балл за экзамен3
+	int form1RowsCounter, sortRowsCounter = 0;                      // sortRowsCounter запоминает кол-во
+	float averageMarkExam1 = 0,  // Средний балл за экзамен1       // считаных конструкцией if строк
+		  averageMarkExam2 = 0,  // Средний балл за экзамен2
+		  averageMarkExam3 = 0;  // Средний балл за экзамен3
 
 	form1RowsCounter = StrToInt(StringGrid1->RowCount);
 
@@ -99,10 +99,10 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 
 void __fastcall TForm1::N9Click(TObject *Sender)
 {
-	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
-	float averageMarkExam1 = 0,  // Средний балл за экзамен1      // считаных конструкцией if строк
-		 averageMarkExam2 = 0,  // Средний балл за экзамен2
-		 averageMarkExam3 = 0;  // Средний балл за экзамен3
+	int form1RowsCounter, sortRowsCounter = 0;                  // sortRowsCounter запоминает кол-во
+	float averageMarkExam1 = 0,  // Средний балл за экзамен1   // считаных конструкцией if строк
+		  averageMarkExam2 = 0,  // Средний балл за экзамен2
+		  averageMarkExam3 = 0;  // Средний балл за экзамен3
 
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 
@@ -145,7 +145,24 @@ void __fastcall TForm1::N3Click(TObject *Sender)
 	if (SaveDialog1->Execute())
 		for(int i = 0; i < StringGrid1->RowCount; i++)
 			Table1->Add(StringGrid1->Rows[i]->DelimitedText);
-		Table1->SaveToFile(SaveDialog1->FileName);
+
+	Table1->SaveToFile(SaveDialog1->FileName);
+
+	delete Table1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::N2Click(TObject *Sender)
+{
+	TStringList *Table1 = new TStringList;
+
+	if (OpenDialog1->Execute())
+	{
+		Table1->LoadFromFile(OpenDialog1->FileName);
+		StringGrid1->RowCount = Table1->Count;
+
+		for(int i = 0; i < StringGrid1->RowCount; i++)
+			StringGrid1->Rows[i]->DelimitedText = Table1->Strings[i];
+	}
 
 	delete Table1;
 }

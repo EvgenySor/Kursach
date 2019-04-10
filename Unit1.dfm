@@ -29,23 +29,26 @@ object Form1: TForm1
     TabOrder = 0
   end
   object SaveDialog1: TSaveDialog
-    Left = 472
-    Top = 208
+    Filter = #1060#1072#1081#1083#1099' '#1076#1072#1085#1085#1099#1093'|*.txt|'#1042#1089#1077' '#1092#1072#1081#1083#1099'|*.*'
+    Left = 416
+    Top = 144
   end
   object OpenDialog1: TOpenDialog
+    Filter = #1060#1072#1081#1083#1099' '#1076#1072#1085#1085#1099#1093'|*.txt|'#1042#1089#1077' '#1092#1072#1081#1083#1099'|*.*'
     Title = #1057#1086#1079#1076#1072#1090#1100' '#1085#1086#1074#1099#1081' '#1092#1072#1081#1083
-    Left = 400
-    Top = 208
+    Left = 328
+    Top = 144
   end
   object MainMenu1: TMainMenu
-    Left = 536
-    Top = 200
+    Left = 504
+    Top = 144
     object N1: TMenuItem
       Caption = #1053#1086#1074#1072#1103' '#1090#1072#1073#1083#1080#1094#1072
       OnClick = N1Click
     end
     object N2: TMenuItem
       Caption = #1054#1090#1082#1088#1099#1090#1100
+      OnClick = N2Click
     end
     object N3: TMenuItem
       Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100

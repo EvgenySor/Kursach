@@ -57,10 +57,10 @@ void __fastcall TForm1::N7Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::N8Click(TObject *Sender)
 {
-	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
-	float averageMarkExam1 = 0,  // Средний балл за экзамен1          // считаных конструкцией if строк
-		 averageMarkExam2 = 0,  // Средний балл за экзамен2
-		 averageMarkExam3 = 0;  // Средний балл за экзамен3
+	int form1RowsCounter, sortRowsCounter = 0;                      // sortRowsCounter запоминает кол-во
+	float averageMarkExam1 = 0,  // Средний балл за экзамен1       // считаных конструкцией if строк
+		  averageMarkExam2 = 0,  // Средний балл за экзамен2
+		  averageMarkExam3 = 0;  // Средний балл за экзамен3
 
 	form1RowsCounter = StrToInt(StringGrid1->RowCount);
 
@@ -99,10 +99,10 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 
 void __fastcall TForm1::N9Click(TObject *Sender)
 {
-	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
-	float averageMarkExam1 = 0,  // Средний балл за экзамен1      // считаных конструкцией if строк
-		 averageMarkExam2 = 0,  // Средний балл за экзамен2
-		 averageMarkExam3 = 0;  // Средний балл за экзамен3
+	int form1RowsCounter, sortRowsCounter = 0;                  // sortRowsCounter запоминает кол-во
+	float averageMarkExam1 = 0,  // Средний балл за экзамен1   // считаных конструкцией if строк
+		  averageMarkExam2 = 0,  // Средний балл за экзамен2
+		  averageMarkExam3 = 0;  // Средний балл за экзамен3
 
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 
@@ -138,22 +138,30 @@ void __fastcall TForm1::N9Click(TObject *Sender)
 	"Средний балл за экзамен3: " + FloatToStrF(averageMarkExam3,ffFixed,3,2));
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::N3Click(TObject *Sender)
 {
-	SaveDialog1->DefaultExt="txt";
-	if(SaveDialog1->Execute())
-	{
-		FILE *fop = fopen(SaveDialog1->FileName.c_str(),"wt");
-		if(fop)
-		{
-			if(StringGrid1->RowCount>0)
-				fprintf(fop,StringGrid1->Rows[0]->CommaText.c_str());
-			for(int i=1;i<StringGrid1->RowCount;i++)
-				fprintf(fop,"\n%s",StringGrid1->Rows[i]->CommaText.c_str());
-			fclose(fop);
-		}
-	}
+	TStringList *Table1 = new TStringList;
+
+	if (SaveDialog1->Execute())
+		for(int i = 0; i < StringGrid1->RowCount; i++)
+			Table1->Add(StringGrid1->Rows[i]->DelimitedText);
+
+	Table1->SaveToFile(SaveDialog1->FileName);
+
+	delete Table1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::N2Click(TObject *Sender)
+{
+	TStringList *Table1 = new TStringList;
+
+	Table1->LoadFromFile(OpenDialog1->FileName);
+	StringGrid1->RowCount = Table1->Count;
+
+	for(int i = 0; i < StringGrid1->RowCount; i++)
+		StringGrid1->Rows[i]->DelimitedText = Table1->Strings[i];
+
+    delete Table1;
 }
 //---------------------------------------------------------------------------
 

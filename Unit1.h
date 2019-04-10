@@ -40,6 +40,7 @@ __published:	// IDE-managed Components
 	void __fastcall N8Click(TObject *Sender);
 	void __fastcall N9Click(TObject *Sender);
 	void __fastcall N3Click(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
