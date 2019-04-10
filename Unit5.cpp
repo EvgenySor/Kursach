@@ -20,26 +20,24 @@ __fastcall TForm5::TForm5(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm5::Button1Click(TObject *Sender)
 {
-	int form1RowsCounter, form1CollsCounter, form3RowsCounter, n;
+	int form1RowsCounter, form1CollsCounter = 13, form3RowsCounter;
 
 for (int j = 0; j < form1CollsCounter; j++)
 
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
-	form1CollsCounter = StrToInt(Form1->StringGrid1->ColCount);
+	form3RowsCounter = StrToInt(Form3->StringGrid1->RowCount);
 
 	for (int i = 1; i < form1RowsCounter; i++)
 		if(StrToInt(Edit1->Text) == StrToInt(Form1->StringGrid1->Cells[3][i]))
 		{
-			form3RowsCounter = StrToInt(Form3->StringGrid1->RowCount);
+			//form3RowsCounter = StrToInt(Form3->StringGrid1->RowCount);
 
 			for (int m = 0; m < form1CollsCounter; m++){
 				Form3->StringGrid1->Cells[m][form3RowsCounter] = Form1->StringGrid1->Cells[m][i];}
 			Form3->StringGrid1->RowCount++;
 		}
 
-	Form3->Show();
-	Close();
-	Form2->Close();
+	Form3->Show(); Close(); Form2->Close();
 }
 //---------------------------------------------------------------------------
 

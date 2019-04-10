@@ -1,5 +1,4 @@
 //---------------------------------------------------------------------------
-
 #include <vcl.h>
 #pragma hdrstop
 
@@ -23,11 +22,6 @@ void __fastcall TForm1::Button7Click(TObject *Sender)
 	Form4->Show();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::Button13Click(TObject *Sender)
-{
-	MessageDlg("Автор приложения студент группы ИСТ-11 Сорочук Евгений, БарГу", mtInformation, TMsgDlgButtons() << mbCancel  ,0);
-}
-//---------------------------------------------------------------------------
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	StringGrid1->Cells[0][0] = "Фамилия"; StringGrid1->Cells[1][0] = "Имя";
@@ -39,20 +33,72 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	StringGrid1->Cells[12][0] = "Вид оплаты";
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::Button6Click(TObject *Sender)
+void __fastcall TForm1::N5Click(TObject *Sender)
 {
 	StringGrid1->Options = StringGrid1->Options << goEditing;
 	ShowMessage("Корректирование таблицы разрешено!");
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::Button4Click(TObject *Sender)
+void __fastcall TForm1::N11Click(TObject *Sender)
 {
-	Form2->Show();
+	MessageDlg("Автор приложения студент группы ИСТ-11 Сорочук Евгений, БарГу", mtInformation, TMsgDlgButtons() << mbCancel  ,0);
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::Button1Click(TObject *Sender)
+void __fastcall TForm1::N1Click(TObject *Sender)
 {
 	StringGrid1->ColCount = 13; StringGrid1->RowCount = 1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::N4Click(TObject *Sender)
+{
+	Form4->Show();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::N7Click(TObject *Sender)
+{
+	Form5->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::N8Click(TObject *Sender)
+{
+	int form1RowsCounter, form1CollsCounter = 13, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
+	float averageMarkExam1 = 0,  // Средний балл за экзамен1          // считаных конструкцией if строк
+		 averageMarkExam2 = 0,  // Средний балл за экзамен2
+		 averageMarkExam3 = 0;  // Средний балл за экзамен3
+
+	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
+
+	for (int i = 1; i < form1RowsCounter; i++)
+		if(Form1->StringGrid1->Cells[12][i] == "Госбюджет")
+		{
+			averageMarkExam1 += StrToFloat(Form1->StringGrid1->Cells[9][i]);
+			sortRowsCounter++;
+		}
+	averageMarkExam1 /= sortRowsCounter;
+	sortRowsCounter = 0;
+
+	for (int i = 1; i < form1RowsCounter; i++)
+		if(Form1->StringGrid1->Cells[12][i] == "Госбюджет")
+		{
+			averageMarkExam2 += StrToFloat(Form1->StringGrid1->Cells[10][i]);
+			sortRowsCounter++;
+		}
+	averageMarkExam2 /= sortRowsCounter;
+	sortRowsCounter = 0;
+
+	for (int i = 1; i < form1RowsCounter; i++)
+		if(Form1->StringGrid1->Cells[12][i] == "Госбюджет")
+		{
+			averageMarkExam3 += StrToFloat(Form1->StringGrid1->Cells[11][i]);
+			sortRowsCounter++;
+		}
+	averageMarkExam3 /= sortRowsCounter;
+	sortRowsCounter = 0;
+
+	ShowMessage("Средний балл за экзамен1: " + FloatToStrF(averageMarkExam1,ffFixed,3,2) + "\n"
+	"Средний балл за экзамен2: " + FloatToStrF(averageMarkExam2,ffFixed,3,2) + "\n"
+	"Средний балл за экзамен3: " + FloatToStrF(averageMarkExam3,ffFixed,3,2));
 }
 //---------------------------------------------------------------------------
 
