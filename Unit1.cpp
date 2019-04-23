@@ -1,22 +1,42 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
 #include <stdio.h>
+#include <vector>
+#include <algorithm>
+#include <string>
 #pragma hdrstop
 
 #include "Unit1.h"
-//#include "Unit2.h"
 #include "Unit3.h"
-#include "Unit4.h"
 #include "Unit5.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
+//---------------------------------------------------------------------------
+using namespace std;
+//---------------------------------------------------------------------------
 TForm1 *Form1;
+//---------------------------------------------------------------------------
+struct TStudent
+{
+   UnicodeString surname;
+   UnicodeString name;
+   UnicodeString otchestvo;
+   UnicodeString groupNumber;
+   UnicodeString offset[5];
+   int exam[3];
+   UnicodeString defrayal;
+   int birth_year;
+};
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 }
+//---------------------------------------------------------------------------
+vector <TStudent> student;
+TStudent studStruct;
+int iterCounter = 0;
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
@@ -43,11 +63,6 @@ void __fastcall TForm1::N11Click(TObject *Sender)
 void __fastcall TForm1::N1Click(TObject *Sender)
 {
 	StringGrid1->ColCount = 13; StringGrid1->RowCount = 1;
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::N4Click(TObject *Sender)
-{
-	Form4->Show();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::N7Click(TObject *Sender)
@@ -165,6 +180,79 @@ void __fastcall TForm1::N2Click(TObject *Sender)
 	}
 
 	delete Table1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	int rowsCounter;
+	rowsCounter = StrToInt(StringGrid1->RowCount);
+
+	studStruct.surname = Edit1->Text; studStruct.name = Edit2->Text;
+	studStruct.otchestvo = Edit3->Text; studStruct.groupNumber = Edit4->Text;
+	studStruct.offset[0] = ComboBox2->Text; studStruct.offset[1] = ComboBox3->Text;
+	studStruct.offset[2] = ComboBox4->Text; studStruct.offset[3] = ComboBox5->Text;
+	studStruct.offset[4] = ComboBox6->Text; studStruct.exam[0] = StrToInt(ComboBox7->Text);
+	studStruct.exam[1] = StrToInt(ComboBox8->Text); studStruct.exam[2] = StrToInt(ComboBox9->Text);
+	studStruct.defrayal = ComboBox1->Text;  studStruct.birth_year = StrToInt(Edit5->Text);
+
+	student.push_back(studStruct);
+
+	for (int i = 1; i < rowsCounter; i++)
+		for (int j = 0; j < StringGrid1->ColCount; j++)
+			StringGrid1->Cells[j][i] = "";
+
+	if (student.size() < 2)
+	{
+		StringGrid1->Cells[0][rowsCounter] = student[student.size() - 1].surname;
+		StringGrid1->Cells[1][rowsCounter] = student[student.size() - 1].name;
+		StringGrid1->Cells[2][rowsCounter] = student[student.size() - 1].otchestvo;
+		StringGrid1->Cells[3][rowsCounter] = student[student.size() - 1].groupNumber;
+		StringGrid1->Cells[4][rowsCounter] = student[student.size() - 1].offset[0];
+		StringGrid1->Cells[5][rowsCounter] = student[student.size() - 1].offset[1];
+		StringGrid1->Cells[6][rowsCounter] = student[student.size() - 1].offset[2];
+		StringGrid1->Cells[7][rowsCounter] = student[student.size() - 1].offset[3];
+		StringGrid1->Cells[8][rowsCounter] = student[student.size() - 1].offset[4];
+		StringGrid1->Cells[9][rowsCounter] = IntToStr(student[student.size() - 1].exam[0]);
+		StringGrid1->Cells[10][rowsCounter] = IntToStr(student[student.size() - 1].exam[1]);
+		StringGrid1->Cells[11][rowsCounter] = IntToStr(student[student.size() - 1].exam[2]);
+		StringGrid1->Cells[12][rowsCounter] = student[student.size() - 1].defrayal;
+	} else {
+		for ( int i = 0; i < student.size() - 1; i++)
+		{
+			int imin = i;
+			for ( int j = i + 1; j < student.size(); j++ )
+				if ( student[j].surname < student[imin].surname ) imin = j;
+			TStudent a = student[i]; // обмен двух элементов массива структур
+			student[i] = student[imin];
+			student[imin] = a;
+		}
+
+		int s = 0;
+			for (int j = 1; j < StringGrid1->RowCount + 1; j++) {
+				StringGrid1->Cells[0][j] = student[s].surname;
+				StringGrid1->Cells[1][j] = student[s].name;
+				StringGrid1->Cells[2][j] = student[s].otchestvo;
+				StringGrid1->Cells[3][j] = student[s].groupNumber;
+				StringGrid1->Cells[4][j] = student[s].offset[0];
+				StringGrid1->Cells[5][j] = student[s].offset[1];
+				StringGrid1->Cells[6][j] = student[s].offset[2];
+				StringGrid1->Cells[7][j] = student[s].offset[3];
+				StringGrid1->Cells[8][j] = student[s].offset[4];
+				StringGrid1->Cells[9][j] = IntToStr(student[s].exam[0]);
+				StringGrid1->Cells[10][j] = IntToStr(student[s].exam[1]);
+				StringGrid1->Cells[11][j] = IntToStr(student[s].exam[2]);
+				StringGrid1->Cells[12][j] = student[s].defrayal;
+				s++;
+			}
+
+	}
+
+	rowsCounter++;
+	StringGrid1->RowCount++;
+	Edit1->Text = ""; Edit2->Text = ""; Edit3->Text = ""; Edit4->Text = "";
+	ComboBox1->ItemIndex = -1;  ComboBox2->ItemIndex = -1;  ComboBox3->ItemIndex = -1;
+	ComboBox4->ItemIndex = -1; ComboBox5->ItemIndex = -1; ComboBox6->ItemIndex = -1;
+	ComboBox7->ItemIndex = -1; ComboBox8->ItemIndex = -1; ComboBox9->ItemIndex = -1;
 }
 //---------------------------------------------------------------------------
 
