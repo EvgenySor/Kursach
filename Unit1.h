@@ -49,9 +49,9 @@ __published:	// IDE-managed Components
 	TComboBox *ComboBox8;
 	TComboBox *ComboBox9;
 	TButton *Button1;
-	TEdit *Edit5;
+	TMenuItem *N4;
+	TMenuItem *N13;
 	void __fastcall FormCreate(TObject *Sender);
-	void __fastcall N5Click(TObject *Sender);
 	void __fastcall N11Click(TObject *Sender);
 	void __fastcall N1Click(TObject *Sender);
 	void __fastcall N7Click(TObject *Sender);
@@ -60,6 +60,8 @@ __published:	// IDE-managed Components
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall N10Click(TObject *Sender);
+	void __fastcall N4Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

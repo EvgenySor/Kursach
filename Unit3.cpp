@@ -17,7 +17,7 @@ __fastcall TForm3::TForm3(TComponent* Owner)
 	: TForm(Owner)
 {
 }
-//---------------------------------------------------------------------------
+//----------«аполнение фиксированых €чеек таблицы----------------------------
 void __fastcall TForm3::FormCreate(TObject *Sender)
 {
 	StringGrid1->Cells[0][0] = "‘амили€";
@@ -33,7 +33,5 @@ void __fastcall TForm3::FormCreate(TObject *Sender)
 	StringGrid1->Cells[10][0] = "Ёкзамен 2";
 	StringGrid1->Cells[11][0] = "Ёкзамен 3";
 	StringGrid1->Cells[12][0] = "¬ид оплаты";
-	//if()
 }
-//---------------------------------------------------------------------------
 
