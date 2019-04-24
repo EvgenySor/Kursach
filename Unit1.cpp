@@ -69,50 +69,56 @@ void __fastcall TForm1::N7Click(TObject *Sender)
 {
 	Form5->ShowModal();
 }
+//----------Функция подсчета среднего балла бюджетников----------------------
+void calcAveragMarkBudget(int a, int *form1RowsCounter,
+	 float *averageMarkExam, int *sortRowsCounter, TStringGrid *StringGrid1)
+{
+	for (int i = 1; i < *form1RowsCounter; i++)
+		if(StringGrid1->Cells[12][i] == "Госбюджет")
+		{
+			*averageMarkExam += StrToFloat(StringGrid1->Cells[a][i]);
+			(*sortRowsCounter)++;
+		}
+	*averageMarkExam /= *sortRowsCounter;
+	*sortRowsCounter = 0;
+}
 //----------Подсчет среднего балла бюджетников-------------------------------
 void __fastcall TForm1::N8Click(TObject *Sender)
 {
 	Form6->Memo1->Clear();
 
 	int form1RowsCounter, sortRowsCounter = 0;                      // sortRowsCounter запоминает кол-во
-	float averageMarkExam1 = 0,  // Средний балл за экзамен1       // считаных конструкцией if строк
-		  averageMarkExam2 = 0,  // Средний балл за экзамен2
-		  averageMarkExam3 = 0;  // Средний балл за экзамен3
+	float averageMarkExam = 0;  // Средний балл за экзамен       // считаных конструкцией if строк
 
 	form1RowsCounter = StrToInt(StringGrid1->RowCount);
 
-	for (int i = 1; i < form1RowsCounter; i++)
-		if(StringGrid1->Cells[12][i] == "Госбюджет")
-		{
-			averageMarkExam1 += StrToFloat(StringGrid1->Cells[9][i]);
-			sortRowsCounter++;
-		}
-	averageMarkExam1 /= sortRowsCounter;
-	sortRowsCounter = 0;
+	calcAveragMarkBudget(9, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+	Form6->Memo1->Lines->Add("\tБюджетники");
+	Form6->Memo1->Lines->Add("Средний балл за экзамен 1: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	averageMarkExam = 0;
 
-	for (int i = 1; i < form1RowsCounter; i++)
-		if(StringGrid1->Cells[12][i] == "Госбюджет")
-		{
-			averageMarkExam2 += StrToFloat(StringGrid1->Cells[10][i]);
-			sortRowsCounter++;
-		}
-	averageMarkExam2 /= sortRowsCounter;
-	sortRowsCounter = 0;
+	calcAveragMarkBudget(10, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+	Form6->Memo1->Lines->Add("Средний балл за экзамен 2: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	averageMarkExam = 0;
 
-	for (int i = 1; i < form1RowsCounter; i++)
-		if(StringGrid1->Cells[12][i] == "Госбюджет")
-		{
-			averageMarkExam3 += StrToFloat(StringGrid1->Cells[11][i]);
-			sortRowsCounter++;
-		}
-	averageMarkExam3 /= sortRowsCounter;
-	sortRowsCounter = 0;
-
-	Form6->Memo1->Lines->Add("Средний балл за экзамен1: " + FloatToStrF(averageMarkExam1,ffFixed,3,2));
-	Form6->Memo1->Lines->Add("Средний балл за экзамен2: " + FloatToStrF(averageMarkExam2,ffFixed,3,2));
-	Form6->Memo1->Lines->Add("Средний балл за экзамен3: " + FloatToStrF(averageMarkExam3,ffFixed,3,2));
+	calcAveragMarkBudget(11, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+	Form6->Memo1->Lines->Add("Средний балл за экзамен 3: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	averageMarkExam = 0;
 
 	Form6->Show();
+}
+//----------Функция подсчета среднего балла платников------------------------
+void calcAveragMarkPay(int a, int *form1RowsCounter,
+	 float *averageMarkExam, int *sortRowsCounter, TStringGrid *StringGrid1)
+{
+	for (int i = 1; i < *form1RowsCounter; i++)
+		if(StringGrid1->Cells[12][i] == "Коммерческая")
+		{
+			*averageMarkExam += StrToFloat(StringGrid1->Cells[a][i]);
+			(*sortRowsCounter)++;
+		}
+	*averageMarkExam /= *sortRowsCounter;
+	*sortRowsCounter = 0;
 }
 //----------Подсчет среднего балла платников---------------------------------
 void __fastcall TForm1::N9Click(TObject *Sender)
@@ -120,42 +126,22 @@ void __fastcall TForm1::N9Click(TObject *Sender)
 	Form6->Memo1->Clear();
 
 	int form1RowsCounter, sortRowsCounter = 0;                  // sortRowsCounter запоминает кол-во
-	float averageMarkExam1 = 0,  // Средний балл за экзамен1   // считаных конструкцией if строк
-		  averageMarkExam2 = 0,  // Средний балл за экзамен2
-		  averageMarkExam3 = 0;  // Средний балл за экзамен3
+	float averageMarkExam = 0;  // Средний балл за экзамен   // считаных конструкцией if строк
 
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 
-	for (int i = 1; i < form1RowsCounter; i++)
-		if(Form1->StringGrid1->Cells[12][i] == "Коммерческая")
-		{
-			averageMarkExam1 += StrToFloat(Form1->StringGrid1->Cells[9][i]);
-			sortRowsCounter++;
-		}
-	averageMarkExam1 /= sortRowsCounter;
-	sortRowsCounter = 0;
+	calcAveragMarkPay(9, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+	Form6->Memo1->Lines->Add("\tПлатники");
+	Form6->Memo1->Lines->Add("Средний балл за экзамен 1: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	averageMarkExam = 0;
 
-	for (int i = 1; i < form1RowsCounter; i++)
-		if(Form1->StringGrid1->Cells[12][i] == "Коммерческая")
-		{
-			averageMarkExam2 += StrToFloat(Form1->StringGrid1->Cells[10][i]);
-			sortRowsCounter++;
-		}
-	averageMarkExam2 /= sortRowsCounter;
-	sortRowsCounter = 0;
+	calcAveragMarkPay(10, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+	Form6->Memo1->Lines->Add("Средний балл за экзамен 2: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	averageMarkExam = 0;
 
-	for (int i = 1; i < form1RowsCounter; i++)
-		if(Form1->StringGrid1->Cells[12][i] == "Коммерческая")
-		{
-			averageMarkExam3 += StrToFloat(Form1->StringGrid1->Cells[11][i]);
-			sortRowsCounter++;
-		}
-	averageMarkExam3 /= sortRowsCounter;
-	sortRowsCounter = 0;
-
-	Form6->Memo1->Lines->Add("Средний балл за экзамен1: " + FloatToStrF(averageMarkExam1,ffFixed,3,2));
-	Form6->Memo1->Lines->Add("Средний балл за экзамен2: " + FloatToStrF(averageMarkExam2,ffFixed,3,2));
-	Form6->Memo1->Lines->Add("Средний балл за экзамен3: " + FloatToStrF(averageMarkExam3,ffFixed,3,2));
+	calcAveragMarkPay(11, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+	Form6->Memo1->Lines->Add("Средний балл за экзамен 3: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	averageMarkExam = 0;
 
 	Form6->Show();
 }
@@ -168,7 +154,7 @@ void __fastcall TForm1::N3Click(TObject *Sender)
 		for(int i = 0; i < StringGrid1->RowCount; i++)
 			Table1->Add(StringGrid1->Rows[i]->DelimitedText);
 
-	Table1->SaveToFile(SaveDialog1->FileName);
+	Table1->SaveToFile(SaveDialog1->FileName + ".txt");
 
 	delete Table1;
 }

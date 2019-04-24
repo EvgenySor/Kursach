@@ -19,4 +19,6 @@ void __fastcall TForm6::Button1Click(TObject *Sender)
 {
 	if( SaveDialog1 ->Execute())
 		Memo1->Lines->SaveToFile(SaveDialog1 ->FileName + ".txt");
+
+	Form6->Close();
 }

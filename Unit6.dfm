@@ -3,7 +3,7 @@ object Form6: TForm6
   Top = 0
   Caption = #1057#1088#1077#1076#1085#1080#1081' '#1073#1072#1083#1083
   ClientHeight = 161
-  ClientWidth = 501
+  ClientWidth = 282
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,14 +16,14 @@ object Form6: TForm6
   object Memo1: TMemo
     Left = 8
     Top = 8
-    Width = 481
+    Width = 265
     Height = 97
     Lines.Strings = (
       '')
     TabOrder = 0
   end
   object Button1: TButton
-    Left = 160
+    Left = 48
     Top = 111
     Width = 169
     Height = 41
@@ -38,7 +38,7 @@ object Form6: TForm6
     OnClick = Button1Click
   end
   object SaveDialog1: TSaveDialog
-    Left = 384
-    Top = 112
+    Left = 248
+    Top = 120
   end
 end
