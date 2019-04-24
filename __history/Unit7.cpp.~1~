@@ -15,7 +15,7 @@ __fastcall TForm7::TForm7(TComponent* Owner)
 	: TForm(Owner)
 {
 }
-//----------Подсчет среднего балла группы------------------------------------
+//---------------------------------------------------------------------------
 void __fastcall TForm7::Button1Click(TObject *Sender)
 {
 	Form6->Memo1->Clear();
@@ -37,3 +37,4 @@ void __fastcall TForm7::Button1Click(TObject *Sender)
 
 	Form6->Show(); Form7->Close();
 }
+//---------------------------------------------------------------------------
