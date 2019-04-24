@@ -37,3 +37,9 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
 
 
 
+void __fastcall TForm5::FormCreate(TObject *Sender)
+{
+	Form5->Color = RGB(141, 185, 202);
+}
+//---------------------------------------------------------------------------
+

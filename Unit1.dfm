@@ -27,11 +27,12 @@ object Form1: TForm1
     RowCount = 1
     FixedRows = 0
     TabOrder = 0
+    OnDrawCell = StringGrid1DrawCell
   end
   object GroupBox1: TGroupBox
-    Left = 162
+    Left = 175
     Top = 8
-    Width = 609
+    Width = 583
     Height = 256
     Caption = #1051#1080#1095#1085#1099#1077' '#1076#1072#1085#1085#1099#1077
     Font.Charset = RUSSIAN_CHARSET
@@ -225,7 +226,7 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox7: TComboBox
-      Left = 424
+      Left = 400
       Top = 29
       Width = 145
       Height = 27
@@ -250,7 +251,7 @@ object Form1: TForm1
         '10')
     end
     object ComboBox8: TComboBox
-      Left = 424
+      Left = 400
       Top = 75
       Width = 145
       Height = 27
@@ -275,7 +276,7 @@ object Form1: TForm1
         '10')
     end
     object ComboBox9: TComboBox
-      Left = 424
+      Left = 400
       Top = 117
       Width = 145
       Height = 27
@@ -300,7 +301,7 @@ object Form1: TForm1
         '10')
     end
     object Button1: TButton
-      Left = 400
+      Left = 384
       Top = 197
       Width = 188
       Height = 39

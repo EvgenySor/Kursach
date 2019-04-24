@@ -93,3 +93,8 @@ void __fastcall TForm2::FormPaint(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm2::FormCreate(TObject *Sender)
+{
+	Form2->Color = RGB(141, 185, 202);
+}
+//---------------------------------------------------------------------------

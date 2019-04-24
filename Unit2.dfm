@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   OnPaint = FormPaint
   OnResize = FormResize
   PixelsPerInch = 96

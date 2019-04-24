@@ -18,6 +18,7 @@ __fastcall TForm3::TForm3(TComponent* Owner)
 //----------Заполнение фиксированых ячеек таблицы----------------------------
 void __fastcall TForm3::FormCreate(TObject *Sender)
 {
+	Form3->Color = RGB(141, 185, 202);
 	StringGrid1->Cells[0][0] = "Фамилия";
 	StringGrid1->Cells[1][0] = "Имя";
 	StringGrid1->Cells[2][0] = "Отчество";

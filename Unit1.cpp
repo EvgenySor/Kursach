@@ -46,11 +46,13 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	StringGrid1->Cells[8][0] = "Зачет 5"; StringGrid1->Cells[9][0] = "Экзамен 1";
 	StringGrid1->Cells[10][0] = "Экзамен 2"; StringGrid1->Cells[11][0] = "Экзамен 3";
 	StringGrid1->Cells[12][0] = "Вид оплаты";
+
+	Form1->Color = RGB(141, 185, 202);
 }
 //----------Автор------------------------------------------------------------
 void __fastcall TForm1::N11Click(TObject *Sender)
 {
-	MessageDlg("Автор приложения студент группы ИСТ-11 Сорочук Евгений, БарГу", mtInformation, TMsgDlgButtons() << mbCancel  ,0);
+	MessageDlg("Автор приложения: студент группы ИСТ-11 Сорочук Евгений, БарГу", mtInformation, TMsgDlgButtons() << mbCancel  ,0);
 }
 //----------Новая таблица----------------------------------------------------
 void __fastcall TForm1::N1Click(TObject *Sender)
@@ -318,6 +320,29 @@ void __fastcall TForm1::N4Click(TObject *Sender)
 void __fastcall TForm1::N14Click(TObject *Sender)
 {
 	Form2->Show();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::StringGrid1DrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
+          TGridDrawState State)
+{
+	int x, y;
+	x = Rect.Left + (Rect.Width() - StringGrid1->Canvas->TextWidth(StringGrid1->Cells[ACol][ARow]))/2;
+	y = Rect.Top + (Rect.Height() - StringGrid1->Canvas->TextHeight(StringGrid1->Cells[ACol][ARow]))/2;
+	if(ACol > -1 && ARow == 0)
+	{
+		//StringGrid1->Canvas->FillRect(Rect);
+		StringGrid1->Canvas->Brush->Color = RGB(255, 108, 95);
+		StringGrid1->Canvas->Pen->Color = RGB(238, 203, 173);
+		StringGrid1->Canvas->Rectangle(Rect);
+		StringGrid1->Canvas->TextOut(x,y,StringGrid1->Cells[ACol][ARow]);
+	}
+	if (ACol > -1 && ARow != 0)
+	{
+		StringGrid1->Canvas->Brush->Color = RGB(255, 193, 104);
+		StringGrid1->Canvas->Pen->Color = RGB(238, 203, 173);
+		StringGrid1->Canvas->Rectangle(Rect);
+		StringGrid1->Canvas->TextOut(x,y,StringGrid1->Cells[ACol][ARow]);
+	}
 }
 //---------------------------------------------------------------------------
 

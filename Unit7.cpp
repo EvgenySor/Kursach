@@ -37,3 +37,9 @@ void __fastcall TForm7::Button1Click(TObject *Sender)
 
 	Form6->Show(); Form7->Close();
 }
+void __fastcall TForm7::FormCreate(TObject *Sender)
+{
+	Form7->Color = RGB(141, 185, 202);
+}
+//---------------------------------------------------------------------------
+

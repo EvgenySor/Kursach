@@ -64,6 +64,8 @@ __published:	// IDE-managed Components
 	void __fastcall N10Click(TObject *Sender);
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall N14Click(TObject *Sender);
+	void __fastcall StringGrid1DrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
+          TGridDrawState State);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
