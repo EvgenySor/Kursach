@@ -9,6 +9,7 @@
 #include "Unit5.h"
 #include "Unit6.h"
 #include "Unit7.h"
+#include "Unit2.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -54,7 +55,7 @@ void __fastcall TForm1::N11Click(TObject *Sender)
 //----------Новая таблица----------------------------------------------------
 void __fastcall TForm1::N1Click(TObject *Sender)
 {
-	if (MessageDlg("Вы уверены?Данные будут потеряны!\nДля сохранения данных таблицы воспользуйтесь вкладкой 'Сохранить'", mtConfirmation, TMsgDlgButtons() << mbYes << mbNo,0) == mrYes)
+	if (MessageDlg("Вы уверены? Данные будут потеряны!\nДля сохранения данных таблицы воспользуйтесь вкладкой 'Сохранить'", mtConfirmation, TMsgDlgButtons() << mbYes << mbNo,0) == mrYes)
 	{
 		StringGrid1->ColCount = 13; StringGrid1->RowCount = 1;
 
@@ -105,7 +106,7 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 	Form6->Memo1->Lines->Add("Средний балл за экзамен 3: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 	averageMarkExam = 0;
 
-	Form6->Show();
+	Form6->ShowModal();
 }
 //----------Функция подсчета среднего балла платников------------------------
 void calcAveragMarkPay(int a, int *form1RowsCounter,
@@ -143,7 +144,7 @@ void __fastcall TForm1::N9Click(TObject *Sender)
 	Form6->Memo1->Lines->Add("Средний балл за экзамен 3: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 	averageMarkExam = 0;
 
-	Form6->Show();
+	Form6->ShowModal();
 }
 //----------Сохранение таблицы в файл----------------------------------------
 void __fastcall TForm1::N3Click(TObject *Sender)
@@ -312,6 +313,11 @@ void __fastcall TForm1::N4Click(TObject *Sender)
 {
 	StringGrid1->Options = StringGrid1->Options << goEditing;
 	ShowMessage("Корректирование таблицы разрешено!");
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::N14Click(TObject *Sender)
+{
+	Form2->Show();
 }
 //---------------------------------------------------------------------------
 

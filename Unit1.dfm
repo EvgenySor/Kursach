@@ -2,9 +2,9 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1043#1083#1072#1074#1085#1099#1081' '#1101#1082#1088#1072#1085
-  ClientHeight = 600
+  ClientHeight = 522
   ClientWidth = 917
-  Color = clBtnFace
+  Color = clSilver
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -20,7 +20,7 @@ object Form1: TForm1
     Left = 8
     Top = 270
     Width = 897
-    Height = 297
+    Height = 243
     ColCount = 13
     DefaultColWidth = 80
     FixedCols = 0
@@ -29,9 +29,9 @@ object Form1: TForm1
     TabOrder = 0
   end
   object GroupBox1: TGroupBox
-    Left = 112
+    Left = 162
     Top = 8
-    Width = 689
+    Width = 609
     Height = 256
     Caption = #1051#1080#1095#1085#1099#1077' '#1076#1072#1085#1085#1099#1077
     Font.Charset = RUSSIAN_CHARSET
@@ -94,36 +94,36 @@ object Form1: TForm1
       ParentFont = False
     end
     object Edit1: TEdit
-      Left = 131
-      Top = 28
+      Left = 97
+      Top = 29
       Width = 121
-      Height = 29
+      Height = 27
       TabOrder = 0
     end
     object Edit2: TEdit
-      Left = 131
+      Left = 97
       Top = 74
       Width = 121
-      Height = 29
+      Height = 27
       TabOrder = 1
     end
     object Edit3: TEdit
-      Left = 131
-      Top = 116
+      Left = 97
+      Top = 117
       Width = 121
-      Height = 29
+      Height = 27
       TabOrder = 2
     end
     object Edit4: TEdit
-      Left = 131
-      Top = 162
+      Left = 97
+      Top = 163
       Width = 121
-      Height = 29
+      Height = 27
       TabOrder = 3
     end
     object ComboBox1: TComboBox
       Left = 16
-      Top = 215
+      Top = 212
       Width = 183
       Height = 27
       Font.Charset = RUSSIAN_CHARSET
@@ -139,7 +139,7 @@ object Form1: TForm1
         #1050#1086#1084#1084#1077#1088#1095#1077#1089#1082#1072#1103)
     end
     object ComboBox2: TComboBox
-      Left = 312
+      Left = 265
       Top = 29
       Width = 87
       Height = 27
@@ -156,7 +156,7 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox3: TComboBox
-      Left = 312
+      Left = 265
       Top = 75
       Width = 87
       Height = 27
@@ -173,7 +173,7 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox4: TComboBox
-      Left = 312
+      Left = 265
       Top = 117
       Width = 87
       Height = 27
@@ -190,7 +190,7 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox5: TComboBox
-      Left = 312
+      Left = 265
       Top = 163
       Width = 87
       Height = 27
@@ -207,7 +207,7 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox6: TComboBox
-      Left = 312
+      Left = 265
       Top = 209
       Width = 87
       Height = 27
@@ -225,7 +225,7 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox7: TComboBox
-      Left = 472
+      Left = 424
       Top = 29
       Width = 145
       Height = 27
@@ -250,7 +250,7 @@ object Form1: TForm1
         '10')
     end
     object ComboBox8: TComboBox
-      Left = 472
+      Left = 424
       Top = 75
       Width = 145
       Height = 27
@@ -275,7 +275,7 @@ object Form1: TForm1
         '10')
     end
     object ComboBox9: TComboBox
-      Left = 472
+      Left = 424
       Top = 117
       Width = 145
       Height = 27
@@ -300,8 +300,8 @@ object Form1: TForm1
         '10')
     end
     object Button1: TButton
-      Left = 472
-      Top = 203
+      Left = 400
+      Top = 197
       Width = 188
       Height = 39
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
@@ -368,6 +368,10 @@ object Form1: TForm1
       object N10: TMenuItem
         Caption = #1054#1073#1097#1080#1081' '#1089#1088#1077#1076#1085#1080#1081' '#1073#1072#1083#1083' '#1075#1088#1091#1087#1087#1099
         OnClick = N10Click
+      end
+      object N14: TMenuItem
+        Caption = #1055#1086#1089#1090#1088#1086#1080#1090#1100' '#1075#1088#1072#1092#1080#1082' '#1087#1088#1077#1076#1084#1077#1090#1086#1074' '#1075#1088#1091#1087#1087#1099
+        OnClick = N14Click
       end
     end
     object N11: TMenuItem
