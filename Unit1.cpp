@@ -5,11 +5,12 @@
 #pragma hdrstop
 
 #include "Unit1.h"
+#include "Unit2.h"
 #include "Unit3.h"
+#include "Unit4.h"
 #include "Unit5.h"
 #include "Unit6.h"
 #include "Unit7.h"
-#include "Unit2.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -47,7 +48,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	StringGrid1->Cells[10][0] = "Экзамен 2"; StringGrid1->Cells[11][0] = "Экзамен 3";
 	StringGrid1->Cells[12][0] = "Вид оплаты";
 
-	Form1->Color = RGB(141, 185, 202);
+	//Form1->Color = RGB(141, 185, 202);
 }
 //----------Автор------------------------------------------------------------
 void __fastcall TForm1::N11Click(TObject *Sender)
@@ -90,8 +91,8 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 {
 	Form6->Memo1->Clear();
 
-	int form1RowsCounter, sortRowsCounter = 0;                      // sortRowsCounter запоминает кол-во
-	float averageMarkExam = 0;  // Средний балл за экзамен       // считаных конструкцией if строк
+	int form1RowsCounter, sortRowsCounter = 0;                 // sortRowsCounter запоминает кол-во
+	float averageMarkExam = 0;  // Средний балл за экзамен    // считаных конструкцией if строк
 
 	form1RowsCounter = StrToInt(StringGrid1->RowCount);
 
@@ -238,72 +239,86 @@ void __fastcall TForm1::N2Click(TObject *Sender)
 //----------Добавление студента----------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-	studStruct.surname = Edit1->Text; studStruct.name = Edit2->Text;
-	studStruct.otchestvo = Edit3->Text; studStruct.groupNumber = Edit4->Text;
-	studStruct.offset[0] = ComboBox2->Text; studStruct.offset[1] = ComboBox3->Text;
-	studStruct.offset[2] = ComboBox4->Text; studStruct.offset[3] = ComboBox5->Text;
-	studStruct.offset[4] = ComboBox6->Text; studStruct.exam[0] = StrToInt(ComboBox7->Text);
-	studStruct.exam[1] = StrToInt(ComboBox8->Text); studStruct.exam[2] = StrToInt(ComboBox9->Text);
-	studStruct.defrayal = ComboBox1->Text;
-
-	student.push_back(studStruct);
-
-	/*----очистка StringGrid----*/
-	for (int i = 1; i < StringGrid1->RowCount; i++)
-		for (int j = 0; j < StringGrid1->ColCount; j++)
-			StringGrid1->Cells[j][i] = "";
-
-	if (student.size() < 2) {
-		StringGrid1->Cells[0][StringGrid1->RowCount] = student[0].surname;
-		StringGrid1->Cells[1][StringGrid1->RowCount] = student[0].name;
-		StringGrid1->Cells[2][StringGrid1->RowCount] = student[0].otchestvo;
-		StringGrid1->Cells[3][StringGrid1->RowCount] = student[0].groupNumber;
-		StringGrid1->Cells[4][StringGrid1->RowCount] = student[0].offset[0];
-		StringGrid1->Cells[5][StringGrid1->RowCount] = student[0].offset[1];
-		StringGrid1->Cells[6][StringGrid1->RowCount] = student[0].offset[2];
-		StringGrid1->Cells[7][StringGrid1->RowCount] = student[0].offset[3];
-		StringGrid1->Cells[8][StringGrid1->RowCount] = student[0].offset[4];
-		StringGrid1->Cells[9][StringGrid1->RowCount] = IntToStr(student[0].exam[0]);
-		StringGrid1->Cells[10][StringGrid1->RowCount] = IntToStr(student[0].exam[1]);
-		StringGrid1->Cells[11][StringGrid1->RowCount] = IntToStr(student[0].exam[2]);
-		StringGrid1->Cells[12][StringGrid1->RowCount] = student[0].defrayal;
-	} else
+	if ((Edit1->Text != "") && (Edit2->Text != "") && (Edit3->Text != "") &&
+	(Edit4->Text != "") &&
+	(ComboBox2->Text == "Зачет") || (ComboBox2->Text == "Незачет") &&
+	(ComboBox3->Text == "Зачет") || (ComboBox3->Text == "Незачет") &&
+	(ComboBox4->Text == "Зачет") || (ComboBox4->Text == "Незачет") &&
+	(ComboBox5->Text == "Зачет") || (ComboBox5->Text == "Незачет") &&
+	(ComboBox6->Text == "Зачет") || (ComboBox6->Text == "Незачет") &&
+	(ComboBox1->Text == "Госбюджет") || (ComboBox1->Text == "Коммерческая"))
 	{
-		/*----Сортировка вектора----*/
-		for (unsigned i = 0; i < student.size() - 1; i++)
-		{
-			int imin = i;
-			for (unsigned j = i + 1; j < student.size(); j++ )
-				if ( student[j].surname < student[imin].surname ) imin = j;
-			TStudent a = student[i]; // обмен двух элементов массива структур
-			student[i] = student[imin];
-			student[imin] = a;
-		}
+		studStruct.surname = Edit1->Text; studStruct.name = Edit2->Text;
+		studStruct.otchestvo = Edit3->Text; studStruct.groupNumber = Edit4->Text;
+		studStruct.offset[0] = ComboBox2->Text; studStruct.offset[1] = ComboBox3->Text;
+		studStruct.offset[2] = ComboBox4->Text; studStruct.offset[3] = ComboBox5->Text;
+		studStruct.offset[4] = ComboBox6->Text; studStruct.exam[0] = StrToInt(ComboBox7->Text);
+		studStruct.exam[1] = StrToInt(ComboBox8->Text); studStruct.exam[2] = StrToInt(ComboBox9->Text);
+		studStruct.defrayal = ComboBox1->Text;
 
-		/*----Запись вектора структур в StringGrid----*/
-		for (int j = 1; j < StringGrid1->RowCount + 1; j++)
+		student.push_back(studStruct);
+
+		/*----очистка StringGrid----*/
+		for (int i = 1; i < StringGrid1->RowCount; i++)
+			for (int j = 0; j < StringGrid1->ColCount; j++)
+				StringGrid1->Cells[j][i] = "";
+
+		if (student.size() < 2) {
+			StringGrid1->Cells[0][StringGrid1->RowCount] = student[0].surname;
+			StringGrid1->Cells[1][StringGrid1->RowCount] = student[0].name;
+			StringGrid1->Cells[2][StringGrid1->RowCount] = student[0].otchestvo;
+			StringGrid1->Cells[3][StringGrid1->RowCount] = student[0].groupNumber;
+			StringGrid1->Cells[4][StringGrid1->RowCount] = student[0].offset[0];
+			StringGrid1->Cells[5][StringGrid1->RowCount] = student[0].offset[1];
+			StringGrid1->Cells[6][StringGrid1->RowCount] = student[0].offset[2];
+			StringGrid1->Cells[7][StringGrid1->RowCount] = student[0].offset[3];
+			StringGrid1->Cells[8][StringGrid1->RowCount] = student[0].offset[4];
+			StringGrid1->Cells[9][StringGrid1->RowCount] = IntToStr(student[0].exam[0]);
+			StringGrid1->Cells[10][StringGrid1->RowCount] = IntToStr(student[0].exam[1]);
+			StringGrid1->Cells[11][StringGrid1->RowCount] = IntToStr(student[0].exam[2]);
+			StringGrid1->Cells[12][StringGrid1->RowCount] = student[0].defrayal;
+		} else
 		{
-			StringGrid1->Cells[0][j] = student[j - 1].surname;
-			StringGrid1->Cells[1][j] = student[j - 1].name;
-			StringGrid1->Cells[2][j] = student[j - 1].otchestvo;
-			StringGrid1->Cells[3][j] = student[j - 1].groupNumber;
-			StringGrid1->Cells[4][j] = student[j - 1].offset[0];
-			StringGrid1->Cells[5][j] = student[j - 1].offset[1];
-			StringGrid1->Cells[6][j] = student[j - 1].offset[2];
-			StringGrid1->Cells[7][j] = student[j - 1].offset[3];
-			StringGrid1->Cells[8][j] = student[j - 1].offset[4];
-			StringGrid1->Cells[9][j] = IntToStr(student[j - 1].exam[0]);
-			StringGrid1->Cells[10][j] = IntToStr(student[j - 1].exam[1]);
-			StringGrid1->Cells[11][j] = IntToStr(student[j - 1].exam[2]);
-			StringGrid1->Cells[12][j] = student[j - 1].defrayal;
+			/*----Сортировка вектора----*/
+			for (unsigned i = 0; i < student.size() - 1; i++)
+			{
+				int imin = i;
+				for (unsigned j = i + 1; j < student.size(); j++ )
+					if ( student[j].surname < student[imin].surname ) imin = j;
+				TStudent a = student[i]; // обмен двух элементов массива структур
+				student[i] = student[imin];
+				student[imin] = a;
+			}
+
+			/*----Запись вектора структур в StringGrid----*/
+			for (int j = 1; j < StringGrid1->RowCount + 1; j++)
+			{
+				StringGrid1->Cells[0][j] = student[j - 1].surname;
+				StringGrid1->Cells[1][j] = student[j - 1].name;
+				StringGrid1->Cells[2][j] = student[j - 1].otchestvo;
+				StringGrid1->Cells[3][j] = student[j - 1].groupNumber;
+				StringGrid1->Cells[4][j] = student[j - 1].offset[0];
+				StringGrid1->Cells[5][j] = student[j - 1].offset[1];
+				StringGrid1->Cells[6][j] = student[j - 1].offset[2];
+				StringGrid1->Cells[7][j] = student[j - 1].offset[3];
+				StringGrid1->Cells[8][j] = student[j - 1].offset[4];
+				StringGrid1->Cells[9][j] = IntToStr(student[j - 1].exam[0]);
+				StringGrid1->Cells[10][j] = IntToStr(student[j - 1].exam[1]);
+				StringGrid1->Cells[11][j] = IntToStr(student[j - 1].exam[2]);
+				StringGrid1->Cells[12][j] = student[j - 1].defrayal;
+			}
 		}
+		StringGrid1->RowCount++;
+
+		Edit1->Text = ""; Edit2->Text = ""; Edit3->Text = ""; Edit4->Text = "";
+		ComboBox1->Text = "Вид оплаты"; ComboBox2->Text = StringGrid1->Cells[4][0];
+		ComboBox3->Text = StringGrid1->Cells[5][0]; ComboBox4->Text = StringGrid1->Cells[6][0];
+		ComboBox5->Text = StringGrid1->Cells[7][0]; ComboBox6->Text = StringGrid1->Cells[8][0];
+		ComboBox7->Text = StringGrid1->Cells[9][0]; ComboBox8->Text = StringGrid1->Cells[10][0];
+		ComboBox9->Text = StringGrid1->Cells[11][0];
+	} else {
+		ShowMessage("Введите корректные данные!");
 	}
-	StringGrid1->RowCount++;
-
-	Edit1->Text = ""; Edit2->Text = ""; Edit3->Text = ""; Edit4->Text = "";
-	ComboBox1->Text = "Вид оплаты";  ComboBox2->Text = "Зачет 1";  ComboBox3->Text = "Зачет 2";
-	ComboBox4->Text = "Зачет 3"; ComboBox5->Text = "Зачет 4";; ComboBox6->Text = "Зачет 5";;
-	ComboBox7->Text = "Экзамен 1"; ComboBox8->Text = "Экзамен 2"; ComboBox9->Text = "Экзамен 3";
 }
 //----------Подсчет общего среднего балла группы-----------------------------
 void __fastcall TForm1::N10Click(TObject *Sender)
@@ -323,7 +338,7 @@ void __fastcall TForm1::N14Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::StringGrid1DrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
-          TGridDrawState State)
+		  TGridDrawState State)
 {
 	int x, y;
 	x = Rect.Left + (Rect.Width() - StringGrid1->Canvas->TextWidth(StringGrid1->Cells[ACol][ARow]))/2;
@@ -343,6 +358,11 @@ void __fastcall TForm1::StringGrid1DrawCell(TObject *Sender, int ACol, int ARow,
 		StringGrid1->Canvas->Rectangle(Rect);
 		StringGrid1->Canvas->TextOut(x,y,StringGrid1->Cells[ACol][ARow]);
 	}
+}
+//----------Заполнить ячейки экзаменов и зачетов-----------------------------
+void __fastcall TForm1::N17Click(TObject *Sender)
+{
+	Form4->ShowModal();
 }
 //---------------------------------------------------------------------------
 

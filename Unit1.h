@@ -52,6 +52,9 @@ __published:	// IDE-managed Components
 	TMenuItem *N4;
 	TMenuItem *N13;
 	TMenuItem *N14;
+	TMenuItem *N15;
+	TMenuItem *N16;
+	TMenuItem *N17;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall N11Click(TObject *Sender);
 	void __fastcall N1Click(TObject *Sender);
@@ -66,6 +69,7 @@ __published:	// IDE-managed Components
 	void __fastcall N14Click(TObject *Sender);
 	void __fastcall StringGrid1DrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
           TGridDrawState State);
+	void __fastcall N17Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

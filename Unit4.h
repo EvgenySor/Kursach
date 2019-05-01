@@ -1,0 +1,34 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit4H
+#define Unit4H
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.Buttons.hpp>
+//---------------------------------------------------------------------------
+class TForm4 : public TForm
+{
+__published:	// IDE-managed Components
+	TGroupBox *GroupBox1;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TEdit *Edit3;
+	TGroupBox *GroupBox2;
+	TEdit *Edit4;
+	TEdit *Edit5;
+	TEdit *Edit6;
+	TEdit *Edit7;
+	TEdit *Edit8;
+	TBitBtn *BitBtn1;
+	void __fastcall BitBtn1Click(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TForm4(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm4 *Form4;
+//---------------------------------------------------------------------------
+#endif

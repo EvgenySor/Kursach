@@ -18,11 +18,11 @@ object Form1: TForm1
   TextHeight = 13
   object StringGrid1: TStringGrid
     Left = 8
-    Top = 270
+    Top = 271
     Width = 897
     Height = 243
     ColCount = 13
-    DefaultColWidth = 80
+    DefaultColWidth = 120
     FixedCols = 0
     RowCount = 1
     FixedRows = 0
@@ -98,34 +98,34 @@ object Form1: TForm1
       Left = 97
       Top = 29
       Width = 121
-      Height = 27
+      Height = 29
       TabOrder = 0
     end
     object Edit2: TEdit
       Left = 97
       Top = 74
       Width = 121
-      Height = 27
+      Height = 29
       TabOrder = 1
     end
     object Edit3: TEdit
       Left = 97
       Top = 117
       Width = 121
-      Height = 27
+      Height = 29
       TabOrder = 2
     end
     object Edit4: TEdit
       Left = 97
       Top = 163
       Width = 121
-      Height = 27
+      Height = 29
       TabOrder = 3
     end
     object ComboBox1: TComboBox
       Left = 16
       Top = 212
-      Width = 183
+      Width = 202
       Height = 27
       Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
@@ -140,9 +140,9 @@ object Form1: TForm1
         #1050#1086#1084#1084#1077#1088#1095#1077#1089#1082#1072#1103)
     end
     object ComboBox2: TComboBox
-      Left = 265
+      Left = 249
       Top = 29
-      Width = 87
+      Width = 144
       Height = 27
       Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
@@ -157,9 +157,9 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox3: TComboBox
-      Left = 265
+      Left = 249
       Top = 75
-      Width = 87
+      Width = 144
       Height = 27
       Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
@@ -174,9 +174,9 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox4: TComboBox
-      Left = 265
+      Left = 249
       Top = 117
-      Width = 87
+      Width = 144
       Height = 27
       Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
@@ -191,9 +191,9 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox5: TComboBox
-      Left = 265
+      Left = 249
       Top = 163
-      Width = 87
+      Width = 144
       Height = 27
       Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
@@ -208,9 +208,9 @@ object Form1: TForm1
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox6: TComboBox
-      Left = 265
-      Top = 209
-      Width = 87
+      Left = 249
+      Top = 203
+      Width = 144
       Height = 27
       Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
@@ -220,13 +220,13 @@ object Form1: TForm1
       ItemIndex = 0
       ParentFont = False
       TabOrder = 9
-      Text = #1047#1072#1095#1077#1090
+      Text = #1047#1072#1095#1077#1090' 5'
       Items.Strings = (
         #1047#1072#1095#1077#1090
         #1053#1077#1079#1072#1095#1077#1090)
     end
     object ComboBox7: TComboBox
-      Left = 400
+      Left = 424
       Top = 29
       Width = 145
       Height = 27
@@ -251,7 +251,7 @@ object Form1: TForm1
         '10')
     end
     object ComboBox8: TComboBox
-      Left = 400
+      Left = 424
       Top = 75
       Width = 145
       Height = 27
@@ -276,7 +276,7 @@ object Form1: TForm1
         '10')
     end
     object ComboBox9: TComboBox
-      Left = 400
+      Left = 424
       Top = 117
       Width = 145
       Height = 27
@@ -301,9 +301,9 @@ object Form1: TForm1
         '10')
     end
     object Button1: TButton
-      Left = 384
-      Top = 197
-      Width = 188
+      Left = 424
+      Top = 191
+      Width = 145
       Height = 39
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
       Font.Charset = RUSSIAN_CHARSET
@@ -318,18 +318,28 @@ object Form1: TForm1
   end
   object SaveDialog1: TSaveDialog
     Filter = #1060#1072#1081#1083#1099' '#1076#1072#1085#1085#1099#1093'|*.txt|'#1042#1089#1077' '#1092#1072#1081#1083#1099'|*.*'
-    Left = 416
-    Top = 376
+    Left = 32
+    Top = 96
   end
   object OpenDialog1: TOpenDialog
     Filter = #1060#1072#1081#1083#1099' '#1076#1072#1085#1085#1099#1093'|*.txt|'#1042#1089#1077' '#1092#1072#1081#1083#1099'|*.*'
     Title = #1057#1086#1079#1076#1072#1090#1100' '#1085#1086#1074#1099#1081' '#1092#1072#1081#1083
-    Left = 368
-    Top = 376
+    Left = 32
+    Top = 32
   end
   object MainMenu1: TMainMenu
-    Left = 464
-    Top = 376
+    Left = 32
+    Top = 160
+    object N15: TMenuItem
+      Caption = #1058#1072#1073#1083#1080#1094#1072
+      object N16: TMenuItem
+        Caption = #1053#1086#1074#1072#1103' '#1090#1072#1073#1083#1080#1094#1072
+      end
+      object N17: TMenuItem
+        Caption = #1047#1072#1087#1086#1083#1085#1080#1090#1100' '#1087#1086#1083#1103' '#1101#1082#1079#1072#1084#1077#1085#1086#1074' '#1080' '#1079#1072#1095#1077#1090#1086#1074
+        OnClick = N17Click
+      end
+    end
     object N1: TMenuItem
       Caption = #1053#1086#1074#1072#1103' '#1090#1072#1073#1083#1080#1094#1072
       OnClick = N1Click
