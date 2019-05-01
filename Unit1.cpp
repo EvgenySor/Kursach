@@ -11,6 +11,7 @@
 #include "Unit5.h"
 #include "Unit6.h"
 #include "Unit7.h"
+#include "Unit8.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -18,7 +19,7 @@
 using namespace std;
 //---------------------------------------------------------------------------
 TForm1 *Form1;
-//----------"Черновая" структура---------------------------------------------
+//----------Cтруктура---------------------------------------------
 struct TStudent
 {
    UnicodeString surname;
@@ -345,7 +346,6 @@ void __fastcall TForm1::StringGrid1DrawCell(TObject *Sender, int ACol, int ARow,
 	y = Rect.Top + (Rect.Height() - StringGrid1->Canvas->TextHeight(StringGrid1->Cells[ACol][ARow]))/2;
 	if(ACol > -1 && ARow == 0)
 	{
-		//StringGrid1->Canvas->FillRect(Rect);
 		StringGrid1->Canvas->Brush->Color = RGB(255, 108, 95);
 		StringGrid1->Canvas->Pen->Color = RGB(238, 203, 173);
 		StringGrid1->Canvas->Rectangle(Rect);
@@ -363,6 +363,11 @@ void __fastcall TForm1::StringGrid1DrawCell(TObject *Sender, int ACol, int ARow,
 void __fastcall TForm1::N17Click(TObject *Sender)
 {
 	Form4->ShowModal();
+}
+//----------Удалить студента-------------------------------------------------
+void __fastcall TForm1::N13Click(TObject *Sender)
+{
+	Form8->ShowModal();
 }
 //---------------------------------------------------------------------------
 

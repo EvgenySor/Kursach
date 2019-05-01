@@ -360,6 +360,7 @@ object Form1: TForm1
       end
       object N13: TMenuItem
         Caption = #1059#1076#1072#1083#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072
+        OnClick = N13Click
       end
     end
     object N6: TMenuItem
