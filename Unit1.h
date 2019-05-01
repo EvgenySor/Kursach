@@ -19,10 +19,6 @@ __published:	// IDE-managed Components
 	TSaveDialog *SaveDialog1;
 	TOpenDialog *OpenDialog1;
 	TMainMenu *MainMenu1;
-	TMenuItem *N1;
-	TMenuItem *N2;
-	TMenuItem *N3;
-	TMenuItem *N5;
 	TMenuItem *N6;
 	TMenuItem *N7;
 	TMenuItem *N8;
@@ -49,28 +45,33 @@ __published:	// IDE-managed Components
 	TComboBox *ComboBox8;
 	TComboBox *ComboBox9;
 	TButton *Button1;
-	TMenuItem *N4;
-	TMenuItem *N13;
 	TMenuItem *N14;
 	TMenuItem *N15;
 	TMenuItem *N16;
 	TMenuItem *N17;
+	TMenuItem *N1;
+	TMenuItem *N18;
+	TMenuItem *N19;
+	TMenuItem *N2;
+	TMenuItem *N3;
+	TButton *Button2;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall N11Click(TObject *Sender);
-	void __fastcall N1Click(TObject *Sender);
 	void __fastcall N7Click(TObject *Sender);
 	void __fastcall N8Click(TObject *Sender);
 	void __fastcall N9Click(TObject *Sender);
-	void __fastcall N3Click(TObject *Sender);
-	void __fastcall N2Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall N10Click(TObject *Sender);
-	void __fastcall N4Click(TObject *Sender);
 	void __fastcall N14Click(TObject *Sender);
 	void __fastcall StringGrid1DrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
-          TGridDrawState State);
+		  TGridDrawState State);
 	void __fastcall N17Click(TObject *Sender);
-	void __fastcall N13Click(TObject *Sender);
+	void __fastcall N16Click(TObject *Sender);
+	void __fastcall N18Click(TObject *Sender);
+	void __fastcall N19Click(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
+	void __fastcall N3Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

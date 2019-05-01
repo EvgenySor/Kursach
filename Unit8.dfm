@@ -66,24 +66,24 @@ object Form8: TForm8
     ParentFont = False
   end
   object LdelGroupNumber: TLabel
-    Left = 11
-    Top = 226
+    Left = 223
+    Top = 223
     Width = 85
     Height = 13
     Caption = 'LdelGroupNumber'
     Visible = False
   end
   object LdelName: TLabel
-    Left = 50
-    Top = 200
+    Left = 262
+    Top = 197
     Width = 46
     Height = 13
     Caption = 'LdelName'
     Visible = False
   end
   object LdelSurname: TLabel
-    Left = 35
-    Top = 173
+    Left = 247
+    Top = 170
     Width = 61
     Height = 13
     Caption = 'LdelSurname'

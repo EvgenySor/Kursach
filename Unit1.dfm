@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1043#1083#1072#1074#1085#1099#1081' '#1101#1082#1088#1072#1085
-  ClientHeight = 522
+  ClientHeight = 568
   ClientWidth = 917
   Color = clSilver
   Font.Charset = DEFAULT_CHARSET
@@ -220,7 +220,7 @@ object Form1: TForm1
       ItemIndex = 0
       ParentFont = False
       TabOrder = 9
-      Text = #1047#1072#1095#1077#1090' 5'
+      Text = #1047#1072#1095#1077#1090
       Items.Strings = (
         #1047#1072#1095#1077#1090
         #1053#1077#1079#1072#1095#1077#1090)
@@ -302,7 +302,7 @@ object Form1: TForm1
     end
     object Button1: TButton
       Left = 424
-      Top = 191
+      Top = 157
       Width = 145
       Height = 39
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
@@ -315,6 +315,22 @@ object Form1: TForm1
       TabOrder = 13
       OnClick = Button1Click
     end
+  end
+  object Button2: TButton
+    Left = 343
+    Top = 524
+    Width = 225
+    Height = 36
+    Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1082#1086#1088#1088#1077#1082#1090#1080#1088#1086#1074#1082#1091
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+    OnClick = Button2Click
   end
   object SaveDialog1: TSaveDialog
     Filter = #1060#1072#1081#1083#1099' '#1076#1072#1085#1085#1099#1093'|*.txt|'#1042#1089#1077' '#1092#1072#1081#1083#1099'|*.*'
@@ -334,33 +350,30 @@ object Form1: TForm1
       Caption = #1058#1072#1073#1083#1080#1094#1072
       object N16: TMenuItem
         Caption = #1053#1086#1074#1072#1103' '#1090#1072#1073#1083#1080#1094#1072
+        OnClick = N16Click
       end
       object N17: TMenuItem
         Caption = #1047#1072#1087#1086#1083#1085#1080#1090#1100' '#1087#1086#1083#1103' '#1101#1082#1079#1072#1084#1077#1085#1086#1074' '#1080' '#1079#1072#1095#1077#1090#1086#1074
         OnClick = N17Click
       end
+      object N2: TMenuItem
+        Caption = #1048#1079#1084#1077#1085#1080#1090#1100' '#1079#1085#1072#1095#1077#1085#1080#1103' '#1087#1086#1083#1077#1081
+        OnClick = N2Click
+      end
+      object N3: TMenuItem
+        Caption = #1059#1076#1072#1083#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072
+        OnClick = N3Click
+      end
     end
     object N1: TMenuItem
-      Caption = #1053#1086#1074#1072#1103' '#1090#1072#1073#1083#1080#1094#1072
-      OnClick = N1Click
-    end
-    object N2: TMenuItem
-      Caption = #1054#1090#1082#1088#1099#1090#1100
-      OnClick = N2Click
-    end
-    object N3: TMenuItem
-      Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
-      OnClick = N3Click
-    end
-    object N5: TMenuItem
-      Caption = #1050#1086#1088#1088#1077#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1090#1072#1073#1083#1080#1094#1091
-      object N4: TMenuItem
-        Caption = #1042#1085#1077#1089#1090#1080' '#1080#1079#1084#1077#1085#1077#1085#1080#1103
-        OnClick = N4Click
+      Caption = #1060#1072#1081#1083
+      object N18: TMenuItem
+        Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1090#1072#1073#1083#1080#1094#1091' '#1074' '#1092#1072#1081#1083
+        OnClick = N18Click
       end
-      object N13: TMenuItem
-        Caption = #1059#1076#1072#1083#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072
-        OnClick = N13Click
+      object N19: TMenuItem
+        Caption = #1047#1072#1075#1088#1091#1079#1080#1090#1100' '#1076#1072#1085#1085#1099#1077' '#1080#1079' '#1092#1072#1081#1083#1072
+        OnClick = N19Click
       end
     end
     object N6: TMenuItem

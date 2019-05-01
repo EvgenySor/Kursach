@@ -17,35 +17,41 @@ __fastcall TForm8::TForm8(TComponent* Owner)
 //----------Удаление студента------------------------------------------------
 void __fastcall TForm8::BitBtn1Click(TObject *Sender)
 {
-	LdelSurname->Caption = Edit1->Text;
-	LdelName->Caption = Edit2->Text;
-	LdelGroupNumber->Caption = Edit3->Text;
-
-	int *index = new int;
-	int *temp = new int; *temp = -1;
-
-	for (int i = 1; i < Form1->StringGrid1->RowCount; i++)
+	if ((Edit1->Text != "") && (Edit2->Text != "") && (Edit3->Text != ""))
 	{
-		if (LdelSurname->Caption == Form1->StringGrid1->Cells[0][i] &&
-		LdelName->Caption == Form1->StringGrid1->Cells[1][i] &&
-		LdelGroupNumber->Caption == Form1->StringGrid1->Cells[3][i])
+		LdelSurname->Caption = Edit1->Text;
+		LdelName->Caption = Edit2->Text;
+		LdelGroupNumber->Caption = Edit3->Text;
+
+		int *index = new int;
+		int *temp = new int; *temp = -1;
+
+		for (int i = 1; i < Form1->StringGrid1->RowCount; i++)
 		{
-			*index = i;
-			Form1->StringGrid1->Rows[i]->Clear();
-			(*temp)++;
-			break;
+			if (LdelSurname->Caption == Form1->StringGrid1->Cells[0][i] &&
+			LdelName->Caption == Form1->StringGrid1->Cells[1][i] &&
+			LdelGroupNumber->Caption == Form1->StringGrid1->Cells[3][i])
+			{
+				*index = i;
+				Form1->StringGrid1->Rows[i]->Clear();
+				(*temp)++;
+				break;
+			}
 		}
-	}
 
-	/*----------"Стягиваем" строку на предыдущую----------*/
-	if (*temp != -1)
-	{
-		for (int i = *index; i < Form1->StringGrid1->RowCount - 1; i++)
-			Form1->StringGrid1->Rows[i] = Form1->StringGrid1->Rows[i+1];
+		/*----------"Стягиваем" строку на предыдущую----------*/
+		if (*temp != -1)
+		{
+			for (int i = *index; i < Form1->StringGrid1->RowCount - 1; i++)
+				Form1->StringGrid1->Rows[i] = Form1->StringGrid1->Rows[i+1];
 
-		Form1->StringGrid1->RowCount--;
-	}
+			Form1->StringGrid1->RowCount--;
+		}
 
-	delete index; delete temp;
+		delete index; delete temp;
+	} else {
+        ShowMessage("Заполните все поля!");
+    }
+
 }
 //---------------------------------------------------------------------------

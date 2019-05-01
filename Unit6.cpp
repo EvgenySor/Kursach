@@ -22,9 +22,5 @@ void __fastcall TForm6::Button1Click(TObject *Sender)
 
 	Form6->Close();
 }
-void __fastcall TForm6::FormCreate(TObject *Sender)
-{
-	Form6->Color = RGB(141, 185, 202);
-}
 //---------------------------------------------------------------------------
 

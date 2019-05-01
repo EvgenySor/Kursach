@@ -41,33 +41,24 @@ TStudent studStruct;
 //----------Заполнение фиксированых ячеек таблицы----------------------------
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
-	StringGrid1->Cells[0][0] = "Фамилия"; StringGrid1->Cells[1][0] = "Имя";
-	StringGrid1->Cells[2][0] = "Отчество"; StringGrid1->Cells[3][0] = "№ группы";
-	StringGrid1->Cells[4][0] = "Зачет 1"; StringGrid1->Cells[5][0] = "Зачет 2";
-	StringGrid1->Cells[6][0] = "Зачет 3"; StringGrid1->Cells[7][0] = "Зачет 4";
-	StringGrid1->Cells[8][0] = "Зачет 5"; StringGrid1->Cells[9][0] = "Экзамен 1";
-	StringGrid1->Cells[10][0] = "Экзамен 2"; StringGrid1->Cells[11][0] = "Экзамен 3";
+	StringGrid1->Cells[0][0] = "Фамилия";
+	StringGrid1->Cells[1][0] = "Имя";
+	StringGrid1->Cells[2][0] = "Отчество";
+	StringGrid1->Cells[3][0] = "№ группы";
+	StringGrid1->Cells[4][0] = "Зачет 1";
+	StringGrid1->Cells[5][0] = "Зачет 2";
+	StringGrid1->Cells[6][0] = "Зачет 3";
+	StringGrid1->Cells[7][0] = "Зачет 4";
+	StringGrid1->Cells[8][0] = "Зачет 5";
+	StringGrid1->Cells[9][0] = "Экзамен 1";
+	StringGrid1->Cells[10][0] = "Экзамен 2";
+	StringGrid1->Cells[11][0] = "Экзамен 3";
 	StringGrid1->Cells[12][0] = "Вид оплаты";
-
-	//Form1->Color = RGB(141, 185, 202);
 }
 //----------Автор------------------------------------------------------------
 void __fastcall TForm1::N11Click(TObject *Sender)
 {
 	MessageDlg("Автор приложения: студент группы ИСТ-11 Сорочук Евгений, БарГу", mtInformation, TMsgDlgButtons() << mbCancel  ,0);
-}
-//----------Новая таблица----------------------------------------------------
-void __fastcall TForm1::N1Click(TObject *Sender)
-{
-	if (MessageDlg("Вы уверены? Данные будут потеряны!\nДля сохранения данных таблицы воспользуйтесь вкладкой 'Сохранить'", mtConfirmation, TMsgDlgButtons() << mbYes << mbNo,0) == mrYes)
-	{
-		StringGrid1->ColCount = 13; StringGrid1->RowCount = 1;
-
-		/*----Очистка вектора----*/
-		if (student.size() != 0)
-			for (int j = student.size(); j >= 0; j--)
-				student.pop_back();
-	}
 }
 //----------Вывод списка студентов по номеру группы--------------------------
 void __fastcall TForm1::N7Click(TObject *Sender)
@@ -98,16 +89,19 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 	form1RowsCounter = StrToInt(StringGrid1->RowCount);
 
 	calcAveragMarkBudget(9, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("\tБюджетники");
-	Form6->Memo1->Lines->Add("Средний балл за экзамен 1: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	Form6->Memo1->Lines->Add("\tСредний балл студентов(госбюджет)");
+	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
+	StringGrid1->Cells[9][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 	averageMarkExam = 0;
 
 	calcAveragMarkBudget(10, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("Средний балл за экзамен 2: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
+	StringGrid1->Cells[10][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 	averageMarkExam = 0;
 
 	calcAveragMarkBudget(11, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("Средний балл за экзамен 3: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
+	StringGrid1->Cells[11][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 	averageMarkExam = 0;
 
 	Form6->ShowModal();
@@ -136,106 +130,22 @@ void __fastcall TForm1::N9Click(TObject *Sender)
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 
 	calcAveragMarkPay(9, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("\tПлатники");
-	Form6->Memo1->Lines->Add("Средний балл за экзамен 1: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	Form6->Memo1->Lines->Add("\tСредний балл студентов(коммерческ)");
+	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
+	StringGrid1->Cells[9][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 	averageMarkExam = 0;
 
 	calcAveragMarkPay(10, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("Средний балл за экзамен 2: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
+	StringGrid1->Cells[10][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 	averageMarkExam = 0;
 
 	calcAveragMarkPay(11, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("Средний балл за экзамен 3: " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
+	StringGrid1->Cells[11][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 	averageMarkExam = 0;
 
 	Form6->ShowModal();
-}
-//----------Сохранение таблицы в файл----------------------------------------
-void __fastcall TForm1::N3Click(TObject *Sender)
-{
-	TStringList *Table1 = new TStringList;
-
-	if (SaveDialog1->Execute())
-		for(int i = 0; i < StringGrid1->RowCount; i++)
-			Table1->Add(StringGrid1->Rows[i]->DelimitedText);
-
-	Table1->SaveToFile(SaveDialog1->FileName + ".txt");
-
-	delete Table1;
-}
-//----------Загрузка таблицы из файла----------------------------------------
-void __fastcall TForm1::N2Click(TObject *Sender)
-{
-	/*----Очистка вектора----*/
-	if (student.size() != 0)
-		for (int j = student.size(); j >= 0; j--)
-			student.pop_back();
-
-	TStringList *Table1 = new TStringList;
-
-	if (OpenDialog1->Execute())
-	{
-		Table1->LoadFromFile(OpenDialog1->FileName);
-		StringGrid1->RowCount = Table1->Count;
-
-		for(int i = 0; i < StringGrid1->RowCount; i++)
-			StringGrid1->Rows[i]->DelimitedText = Table1->Strings[i];
-
-	delete Table1;
-
-		/*Запись в вектор данных таблицы*/
-		for (int i = 1; i < StringGrid1->RowCount; i++)
-		{
-			studStruct.surname = StringGrid1->Cells[0][i];
-			studStruct.name = StringGrid1->Cells[1][i];
-			studStruct.otchestvo = StringGrid1->Cells[2][i];
-			studStruct.groupNumber = StringGrid1->Cells[3][i];
-			studStruct.offset[0] = StringGrid1->Cells[4][i];
-			studStruct.offset[1] = StringGrid1->Cells[5][i];
-			studStruct.offset[2] = StringGrid1->Cells[6][i];
-			studStruct.offset[3] = StringGrid1->Cells[7][i];
-			studStruct.offset[4] = StringGrid1->Cells[8][i];
-			studStruct.exam[0] = StrToInt(StringGrid1->Cells[9][i]);
-			studStruct.exam[1] = StrToInt(StringGrid1->Cells[10][i]);
-			studStruct.exam[2] = StrToInt(StringGrid1->Cells[11][i]);
-			studStruct.defrayal = StringGrid1->Cells[12][i];
-			student.push_back(studStruct);
-		}
-
-		/*----очистка StringGrid----*/
-		for (int i = 1; i < StringGrid1->RowCount; i++)
-			for (int j = 0; j < StringGrid1->ColCount; j++)
-				StringGrid1->Cells[j][i] = "";
-
-		/*----Сортировка вектора----*/
-		for (unsigned i = 0; i < student.size() - 1; i++)
-		{
-			int imin = i;
-			for (unsigned j = i + 1; j < student.size(); j++ )
-				if ( student[j].surname < student[imin].surname ) imin = j;
-			TStudent a = student[i]; // обмен двух элементов массива структур
-			student[i] = student[imin];
-			student[imin] = a;
-		}
-
-		/*----Запись вектора структур в StringGrid----*/
-		for (int j = 1; j < StringGrid1->RowCount + 1; j++)
-		{
-			StringGrid1->Cells[0][j] = student[j - 1].surname;
-			StringGrid1->Cells[1][j] = student[j - 1].name;
-			StringGrid1->Cells[2][j] = student[j - 1].otchestvo;
-			StringGrid1->Cells[3][j] = student[j - 1].groupNumber;
-			StringGrid1->Cells[4][j] = student[j - 1].offset[0];
-			StringGrid1->Cells[5][j] = student[j - 1].offset[1];
-			StringGrid1->Cells[6][j] = student[j - 1].offset[2];
-			StringGrid1->Cells[7][j] = student[j - 1].offset[3];
-			StringGrid1->Cells[8][j] = student[j - 1].offset[4];
-			StringGrid1->Cells[9][j] = IntToStr(student[j - 1].exam[0]);
-			StringGrid1->Cells[10][j] = IntToStr(student[j - 1].exam[1]);
-			StringGrid1->Cells[11][j] = IntToStr(student[j - 1].exam[2]);
-			StringGrid1->Cells[12][j] = student[j - 1].defrayal;
-		}
-	}
 }
 //----------Добавление студента----------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
@@ -311,11 +221,16 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 		}
 		StringGrid1->RowCount++;
 
-		Edit1->Text = ""; Edit2->Text = ""; Edit3->Text = ""; Edit4->Text = "";
-		ComboBox1->Text = "Вид оплаты"; ComboBox2->Text = StringGrid1->Cells[4][0];
-		ComboBox3->Text = StringGrid1->Cells[5][0]; ComboBox4->Text = StringGrid1->Cells[6][0];
-		ComboBox5->Text = StringGrid1->Cells[7][0]; ComboBox6->Text = StringGrid1->Cells[8][0];
-		ComboBox7->Text = StringGrid1->Cells[9][0]; ComboBox8->Text = StringGrid1->Cells[10][0];
+		Edit1->Text = ""; Edit2->Text = "";
+		Edit3->Text = ""; Edit4->Text = "";
+		ComboBox1->Text = "Вид оплаты";
+		ComboBox2->Text = StringGrid1->Cells[4][0];
+		ComboBox3->Text = StringGrid1->Cells[5][0];
+		ComboBox4->Text = StringGrid1->Cells[6][0];
+		ComboBox5->Text = StringGrid1->Cells[7][0];
+		ComboBox6->Text = StringGrid1->Cells[8][0];
+		ComboBox7->Text = StringGrid1->Cells[9][0];
+		ComboBox8->Text = StringGrid1->Cells[10][0];
 		ComboBox9->Text = StringGrid1->Cells[11][0];
 	} else {
 		ShowMessage("Введите корректные данные!");
@@ -326,18 +241,12 @@ void __fastcall TForm1::N10Click(TObject *Sender)
 {
 	Form7->ShowModal();
 }
-//----------Внесение изменений в таблицу-------------------------------------
-void __fastcall TForm1::N4Click(TObject *Sender)
-{
-	StringGrid1->Options = StringGrid1->Options << goEditing;
-	ShowMessage("Корректирование таблицы разрешено!");
-}
-//---------------------------------------------------------------------------
+//----------График-----------------------------------------------------------
 void __fastcall TForm1::N14Click(TObject *Sender)
 {
 	Form2->Show();
 }
-//---------------------------------------------------------------------------
+//----------Закрашивание ячеек StringGrid------------------------------------
 void __fastcall TForm1::StringGrid1DrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
 		  TGridDrawState State)
 {
@@ -364,10 +273,180 @@ void __fastcall TForm1::N17Click(TObject *Sender)
 {
 	Form4->ShowModal();
 }
+//----------Новая таблица----------------------------------------------------
+void __fastcall TForm1::N16Click(TObject *Sender)
+{
+	if (MessageDlg("Вы уверены? Данные будут потеряны!\nДля сохранения данных таблицы воспользуйтесь вкладкой 'Сохранить'", mtConfirmation, TMsgDlgButtons() << mbYes << mbNo,0) == mrYes)
+	{
+		StringGrid1->ColCount = 13; StringGrid1->RowCount = 1;
+
+		/*----Очистка вектора----*/
+		if (student.size() != 0)
+			for (int j = student.size(); j >= 0; j--)
+				student.pop_back();
+	}
+}
+//----------Сохранение таблицы в файл----------------------------------------
+void __fastcall TForm1::N18Click(TObject *Sender)
+{
+	TStringList *Table1 = new TStringList;
+
+	if (SaveDialog1->Execute())
+		for(int i = 0; i < StringGrid1->RowCount; i++)
+			Table1->Add(StringGrid1->Rows[i]->DelimitedText);
+
+	Table1->SaveToFile(SaveDialog1->FileName + ".txt");
+
+	delete Table1;
+}
+//----------Загрузка таблицы из файла----------------------------------------
+void __fastcall TForm1::N19Click(TObject *Sender)
+{
+	/*----Очистка вектора----*/
+	if (student.size() != 0)
+		for (int j = student.size(); j >= 0; j--)
+			student.pop_back();
+
+	TStringList *Table1 = new TStringList;
+
+	if (OpenDialog1->Execute())
+	{
+		Table1->LoadFromFile(OpenDialog1->FileName);
+		StringGrid1->RowCount = Table1->Count;
+
+		for(int i = 0; i < StringGrid1->RowCount; i++)
+			StringGrid1->Rows[i]->DelimitedText = Table1->Strings[i];
+
+	delete Table1;
+
+		/*Запись в вектор данных таблицы*/
+		for (int i = 1; i < StringGrid1->RowCount; i++)
+		{
+			studStruct.surname = StringGrid1->Cells[0][i];
+			studStruct.name = StringGrid1->Cells[1][i];
+			studStruct.otchestvo = StringGrid1->Cells[2][i];
+			studStruct.groupNumber = StringGrid1->Cells[3][i];
+			studStruct.offset[0] = StringGrid1->Cells[4][i];
+			studStruct.offset[1] = StringGrid1->Cells[5][i];
+			studStruct.offset[2] = StringGrid1->Cells[6][i];
+			studStruct.offset[3] = StringGrid1->Cells[7][i];
+			studStruct.offset[4] = StringGrid1->Cells[8][i];
+			studStruct.exam[0] = StrToInt(StringGrid1->Cells[9][i]);
+			studStruct.exam[1] = StrToInt(StringGrid1->Cells[10][i]);
+			studStruct.exam[2] = StrToInt(StringGrid1->Cells[11][i]);
+			studStruct.defrayal = StringGrid1->Cells[12][i];
+			student.push_back(studStruct);
+		}
+
+		/*----очистка StringGrid----*/
+		for (int i = 1; i < StringGrid1->RowCount; i++)
+			for (int j = 0; j < StringGrid1->ColCount; j++)
+				StringGrid1->Cells[j][i] = "";
+
+		/*----Сортировка вектора----*/
+		for (unsigned i = 0; i < student.size() - 1; i++)
+		{
+			int imin = i;
+			for (unsigned j = i + 1; j < student.size(); j++ )
+				if ( student[j].surname < student[imin].surname ) imin = j;
+			TStudent a = student[i]; // обмен двух элементов массива структур
+			student[i] = student[imin];
+			student[imin] = a;
+		}
+
+		/*----Запись вектора структур в StringGrid----*/
+		for (int j = 1; j < StringGrid1->RowCount + 1; j++)
+		{
+			StringGrid1->Cells[0][j] = student[j - 1].surname;
+			StringGrid1->Cells[1][j] = student[j - 1].name;
+			StringGrid1->Cells[2][j] = student[j - 1].otchestvo;
+			StringGrid1->Cells[3][j] = student[j - 1].groupNumber;
+			StringGrid1->Cells[4][j] = student[j - 1].offset[0];
+			StringGrid1->Cells[5][j] = student[j - 1].offset[1];
+			StringGrid1->Cells[6][j] = student[j - 1].offset[2];
+			StringGrid1->Cells[7][j] = student[j - 1].offset[3];
+			StringGrid1->Cells[8][j] = student[j - 1].offset[4];
+			StringGrid1->Cells[9][j] = IntToStr(student[j - 1].exam[0]);
+			StringGrid1->Cells[10][j] = IntToStr(student[j - 1].exam[1]);
+			StringGrid1->Cells[11][j] = IntToStr(student[j - 1].exam[2]);
+			StringGrid1->Cells[12][j] = student[j - 1].defrayal;
+		}
+	}
+}
+//----------Внесение изменений в таблицу-------------------------------------
+void __fastcall TForm1::N2Click(TObject *Sender)
+{
+	StringGrid1->Options = StringGrid1->Options << goEditing;
+	ShowMessage("Корректирование таблицы разрешено!");
+	Button2->Show();
+}
 //----------Удалить студента-------------------------------------------------
-void __fastcall TForm1::N13Click(TObject *Sender)
+void __fastcall TForm1::N3Click(TObject *Sender)
 {
 	Form8->ShowModal();
+	Button2->Show();
+}
+//----------Сохранить корректировку------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	/*----Очистка вектора----*/
+	if (student.size() != 0)
+		for (int j = student.size(); j >= 0; j--)
+			student.pop_back();
+
+	/*Запись в вектор данных таблицы*/
+	for (int i = 1; i < StringGrid1->RowCount; i++)
+	{
+		studStruct.surname = StringGrid1->Cells[0][i];
+		studStruct.name = StringGrid1->Cells[1][i];
+		studStruct.otchestvo = StringGrid1->Cells[2][i];
+		studStruct.groupNumber = StringGrid1->Cells[3][i];
+		studStruct.offset[0] = StringGrid1->Cells[4][i];
+		studStruct.offset[1] = StringGrid1->Cells[5][i];
+		studStruct.offset[2] = StringGrid1->Cells[6][i];
+		studStruct.offset[3] = StringGrid1->Cells[7][i];
+		studStruct.offset[4] = StringGrid1->Cells[8][i];
+		studStruct.exam[0] = StrToInt(StringGrid1->Cells[9][i]);
+		studStruct.exam[1] = StrToInt(StringGrid1->Cells[10][i]);
+		studStruct.exam[2] = StrToInt(StringGrid1->Cells[11][i]);
+		studStruct.defrayal = StringGrid1->Cells[12][i];
+		student.push_back(studStruct);
+	}
+
+	/*----очистка StringGrid----*/
+	for (int i = 1; i < StringGrid1->RowCount; i++)
+		for (int j = 0; j < StringGrid1->ColCount; j++)
+			StringGrid1->Cells[j][i] = "";
+
+	/*----Сортировка вектора----*/
+	for (unsigned i = 0; i < student.size() - 1; i++)
+	{
+		int imin = i;
+		for (unsigned j = i + 1; j < student.size(); j++ )
+			if ( student[j].surname < student[imin].surname ) imin = j;
+		TStudent a = student[i]; // обмен двух элементов массива структур
+		student[i] = student[imin];
+		student[imin] = a;
+	}
+
+	/*----Запись вектора структур в StringGrid----*/
+	for (int j = 1; j < StringGrid1->RowCount + 1; j++)
+	{
+		StringGrid1->Cells[0][j] = student[j - 1].surname;
+		StringGrid1->Cells[1][j] = student[j - 1].name;
+		StringGrid1->Cells[2][j] = student[j - 1].otchestvo;
+		StringGrid1->Cells[3][j] = student[j - 1].groupNumber;
+		StringGrid1->Cells[4][j] = student[j - 1].offset[0];
+		StringGrid1->Cells[5][j] = student[j - 1].offset[1];
+		StringGrid1->Cells[6][j] = student[j - 1].offset[2];
+		StringGrid1->Cells[7][j] = student[j - 1].offset[3];
+		StringGrid1->Cells[8][j] = student[j - 1].offset[4];
+		StringGrid1->Cells[9][j] = IntToStr(student[j - 1].exam[0]);
+		StringGrid1->Cells[10][j] = IntToStr(student[j - 1].exam[1]);
+		StringGrid1->Cells[11][j] = IntToStr(student[j - 1].exam[2]);
+		StringGrid1->Cells[12][j] = student[j - 1].defrayal;
+	}
+	Button2->Visible = False;
 }
 //---------------------------------------------------------------------------
 
