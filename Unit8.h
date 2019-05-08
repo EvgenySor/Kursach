@@ -20,12 +20,10 @@ __published:	// IDE-managed Components
 	TEdit *Edit3;
 	TEdit *Edit1;
 	TBitBtn *BitBtn1;
-	TLabel *LdelGroupNumber;
-	TLabel *LdelName;
-	TLabel *LdelSurname;
 	void __fastcall BitBtn1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
+	TLabel *L[3];
 	__fastcall TForm8(TComponent* Owner);
 };
 //---------------------------------------------------------------------------

@@ -65,30 +65,6 @@ object Form8: TForm8
     Font.Style = []
     ParentFont = False
   end
-  object LdelGroupNumber: TLabel
-    Left = 223
-    Top = 223
-    Width = 85
-    Height = 13
-    Caption = 'LdelGroupNumber'
-    Visible = False
-  end
-  object LdelName: TLabel
-    Left = 262
-    Top = 197
-    Width = 46
-    Height = 13
-    Caption = 'LdelName'
-    Visible = False
-  end
-  object LdelSurname: TLabel
-    Left = 247
-    Top = 170
-    Width = 61
-    Height = 13
-    Caption = 'LdelSurname'
-    Visible = False
-  end
   object Edit1: TEdit
     Left = 176
     Top = 50
