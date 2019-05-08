@@ -13,6 +13,7 @@
 #include "Unit7.h"
 #include "Unit8.h"
 #include "Unit9.h"
+#include "Unit10.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -454,6 +455,12 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 	}
 	else
     	Button2->Visible = False;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::N12Click(TObject *Sender)
+{
+	Form10->Show();
 }
 //---------------------------------------------------------------------------
 
