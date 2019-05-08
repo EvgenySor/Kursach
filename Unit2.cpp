@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "Unit2.h"
+#include "Unit9.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -14,7 +15,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 {
 }
 //----------Глобальные объекты-----------------------------------------------
-float data[3] = {5.5, 7.8, 6.6};
+float data[3];
 AnsiString Title = "График среднего балла группы";
 //---------------------------------------------------------------------------
 void __fastcall TForm2::FormResize(TObject *Sender)
@@ -24,6 +25,10 @@ void __fastcall TForm2::FormResize(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm2::FormPaint(TObject *Sender)
 {
+	data[0] = StrToFloat(Form9->Label2->Caption);
+	data[1] = StrToFloat(Form9->Label3->Caption);
+	data[2] = StrToFloat(Form9->Label4->Caption);
+
 	int x, y;
 	// заголовок
 	Canvas->Font->Name = "Tahoma";
@@ -91,10 +96,5 @@ void __fastcall TForm2::FormPaint(TObject *Sender)
 		Canvas->TextOut(x,y-h-20,st);
 		x = x + wCol + MC;
 	}
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm2::FormCreate(TObject *Sender)
-{
-	Form2->Color = RGB(141, 185, 202);
 }
 //---------------------------------------------------------------------------

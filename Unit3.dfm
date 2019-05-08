@@ -12,6 +12,7 @@ object Form3: TForm3
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -22,10 +23,11 @@ object Form3: TForm3
     Height = 297
     Color = clSilver
     ColCount = 13
-    DefaultColWidth = 80
+    DefaultColWidth = 120
     FixedCols = 0
     RowCount = 1
     FixedRows = 0
     TabOrder = 0
+    OnDrawCell = StringGrid1DrawCell
   end
 end

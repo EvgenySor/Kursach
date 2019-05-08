@@ -17,6 +17,7 @@ __fastcall TForm8::TForm8(TComponent* Owner)
 //----------Удаление студента------------------------------------------------
 void __fastcall TForm8::BitBtn1Click(TObject *Sender)
 {
+
 	if ((Edit1->Text != "") && (Edit2->Text != "") && (Edit3->Text != ""))
 	{
 		/*----------Создание динамических Label*/
@@ -60,6 +61,5 @@ void __fastcall TForm8::BitBtn1Click(TObject *Sender)
 	} else {
 		ShowMessage("Заполните все поля!");
 	}
-
 }
 //---------------------------------------------------------------------------
