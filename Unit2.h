@@ -16,7 +16,6 @@
 class TForm2 : public TForm
 {
 __published:	// IDE-managed Components
-	void __fastcall FormResize(TObject *Sender);
 	void __fastcall FormPaint(TObject *Sender);
 private:	// User declarations
 public:		// User declarations

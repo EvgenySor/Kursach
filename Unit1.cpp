@@ -204,7 +204,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 			}
 
 			/*----Запись вектора структур в StringGrid----*/
-			for (int j = 1; j < StringGrid1->RowCount + 1; j++)
+			for (int j = 1; j < StringGrid1->RowCount; j++)
 			{
 				StringGrid1->Cells[0][j] = student[j - 1].surname;
 				StringGrid1->Cells[1][j] = student[j - 1].name;
@@ -358,7 +358,7 @@ void __fastcall TForm1::N19Click(TObject *Sender)
 		}
 
 		/*----вывод вектора в StringGrid----*/
-		for (int j = 1; j < StringGrid1->RowCount + 1; j++)
+		for (int j = 1; j < StringGrid1->RowCount; j++)
 		{
 			StringGrid1->Cells[0][j] = student[j - 1].surname;
 			StringGrid1->Cells[1][j] = student[j - 1].name;
@@ -434,7 +434,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 		}
 
 		/*----Запись вектора структур в StringGrid----*/
-		for (int j = 1; j < StringGrid1->RowCount + 1; j++)
+		for (int j = 1; j < StringGrid1->RowCount; j++)
 		{
 			StringGrid1->Cells[0][j] = student[j - 1].surname;
 			StringGrid1->Cells[1][j] = student[j - 1].name;

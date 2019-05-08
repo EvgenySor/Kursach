@@ -5,6 +5,7 @@
 
 #include "Unit2.h"
 #include "Unit9.h"
+#include "Unit1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -16,15 +17,11 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 }
 //----------Глобальные объекты-----------------------------------------------
 float data[3];
-AnsiString Title = "График среднего балла группы";
-//---------------------------------------------------------------------------
-void __fastcall TForm2::FormResize(TObject *Sender)
-{
-	Form2->Refresh(); // обновить содержимое окна
-}
 //---------------------------------------------------------------------------
 void __fastcall TForm2::FormPaint(TObject *Sender)
 {
+	AnsiString Title = "График среднего балла группы " + Form9->Edit1->Text;
+
 	data[0] = StrToFloat(Form9->Label2->Caption);
 	data[1] = StrToFloat(Form9->Label3->Caption);
 	data[2] = StrToFloat(Form9->Label4->Caption);
@@ -33,7 +30,6 @@ void __fastcall TForm2::FormPaint(TObject *Sender)
 	// заголовок
 	Canvas->Font->Name = "Tahoma";
 	Canvas->Font->Size =12;
-
 	x = (ClientWidth - Canvas->TextWidth(Title)) /2;
 
 	Canvas->Brush->Style = bsClear;
@@ -96,5 +92,10 @@ void __fastcall TForm2::FormPaint(TObject *Sender)
 		Canvas->TextOut(x,y-h-20,st);
 		x = x + wCol + MC;
 	}
+
+	ShowMessage("Левый график: " + Form1->StringGrid1->Cells[9][0] + "\n" +
+	"Центральный график: " + Form1->StringGrid1->Cells[10][0] + "\n" +
+	"Правый график: " + Form1->StringGrid1->Cells[11][0] + "\n");
 }
 //---------------------------------------------------------------------------
+

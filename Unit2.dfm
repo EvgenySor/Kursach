@@ -12,7 +12,6 @@ object Form2: TForm2
   Font.Style = []
   OldCreateOrder = False
   OnPaint = FormPaint
-  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
 end
