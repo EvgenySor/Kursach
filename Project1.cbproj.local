@@ -2,36 +2,39 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.265,E:\C++\Kursach\Unit4.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.960,=E:\C++\Kursach\Unit4.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.781,=E:\C++\Kursach\Unit4.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.323,E:\C++\Kursach\Project1PCH1.h=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.781,=E:\C++\Kursach\Unit4.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.960,=E:\C++\Kursach\Unit4.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.410,=E:\C++\Kursach\Unit8.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.741,=E:\C++\Kursach\Unit8.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.223,=E:\C++\Kursach\Unit10.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.533,=E:\C++\Kursach\Unit6.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.113,=E:\C++\Kursach\Unit4.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.741,=E:\C++\Kursach\Unit8.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.559,=E:\C++\Kursach\Unit7.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.435,E:\C++\Kursach\Unit1.dfm=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.165,=E:\C++\Kursach\Unit5.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.847,E:\C++\Kursach\Unit2.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.165,=E:\C++\Kursach\Unit5.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.435,E:\C++\Kursach\Unit1.dfm=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.597,E:\C++\Kursach\Unit4.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.304,=E:\C++\Kursach\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.113,=E:\C++\Kursach\Unit4.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.234,=E:\C++\Kursach\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.435,E:\C++\Kursach\Unit1.cpp=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.304,=E:\C++\Kursach\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.515,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.435,E:\C++\Kursach\Unit1.h=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.349,=E:\C++\Kursach\Unit3.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.515,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.728,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.275,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.728,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.435,E:\C++\Kursach\Unit1.cpp=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.575,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.473,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.223,=E:\C++\Kursach\Unit10.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.234,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.372,=E:\C++\Kursach\Unit9.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.449,E:\C++\Kursach\Project1.cbproj=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.372,=E:\C++\Kursach\Unit9.cpp</Transaction>
     <Transaction>2019.05.10 23:32:44.304,=E:\C++\Kursach\Unit11.cpp</Transaction>
     <Transaction>2019.05.10 23:41:05.520,=E:\C++\Kursach\Unit11.cpp</Transaction>
     <Transaction>2019.05.11 00:00:52.625,E:\C++\Kursach\CalcFunction.cpp=E:\C++\Kursach\Unit11.cpp</Transaction>
     <Transaction>2019.05.11 00:00:52.625,E:\C++\Kursach\CalcFunction.h=E:\C++\Kursach\Unit11.h</Transaction>
+    <Transaction>2019.05.11 00:19:40.757,=E:\C++\Kursach\Unit11.cpp</Transaction>
+    <Transaction>2019.05.11 00:24:20.893,E:\C++\Kursach\TableFunction.h=E:\C++\Kursach\Unit11.h</Transaction>
+    <Transaction>2019.05.11 00:24:20.893,E:\C++\Kursach\TableFunction.cpp=E:\C++\Kursach\Unit11.cpp</Transaction>
   </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Project1.cpp"/>
     <File Path="Project1PCH1.h"/>
@@ -78,5 +81,8 @@
     <File Path="CalcFunction.cpp"/>
     <File Path="CalcFunction.cpp"/>
     <File Path="CalcFunction.h"/>
+    <File Path="TableFunction.cpp"/>
+    <File Path="TableFunction.cpp"/>
+    <File Path="TableFunction.h"/>
   </ProjectSortOrder>
 </BorlandProject>

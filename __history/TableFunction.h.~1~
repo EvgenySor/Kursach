@@ -1,0 +1,10 @@
+//---------------------------------------------------------------------------
+
+#ifndef TableFunctionH
+#define TableFunctionH
+//---------------------------------------------------------------------------
+#endif
+
+#include <Vcl.Grids.hpp>
+
+void fillTheTable(TStringGrid *StringGrid);
