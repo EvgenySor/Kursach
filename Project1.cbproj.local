@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.113,=E:\C++\Kursach\Unit4.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.265,E:\C++\Kursach\Unit4.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.960,=E:\C++\Kursach\Unit4.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.410,=E:\C++\Kursach\Unit8.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.781,=E:\C++\Kursach\Unit4.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.223,=E:\C++\Kursach\Unit10.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.533,=E:\C++\Kursach\Unit6.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.435,C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.h=E:\C++\Kursach\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.781,=E:\C++\Kursach\Unit4.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.847,E:\C++\Kursach\Unit2.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.113,=E:\C++\Kursach\Unit4.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.304,=E:\C++\Kursach\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.234,=E:\C++\Kursach\Unit2.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.165,=E:\C++\Kursach\Unit5.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.597,E:\C++\Kursach\Unit4.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.559,=E:\C++\Kursach\Unit7.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.234,=E:\C++\Kursach\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.728,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.847,E:\C++\Kursach\Unit2.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.410,=E:\C++\Kursach\Unit8.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.515,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.449,C:\Users\Евгений\Documents\RAD Studio\Projects\Project1.cbproj=E:\C++\Kursach\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.349,=E:\C++\Kursach\Unit3.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.435,C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp=E:\C++\Kursach\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.728,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.275,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.515,=C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.323,C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h=E:\C++\Kursach\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.234,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.372,=E:\C++\Kursach\Unit9.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.473,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.435,C:\Users\Евгений\Documents\RAD Studio\Projects\Unit1.dfm=E:\C++\Kursach\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.741,=E:\C++\Kursach\Unit8.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.473,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.323,C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h=E:\C++\Kursach\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.575,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2019.05.08 18:06:50.372,=E:\C++\Kursach\Unit9.cpp</Transaction>
-    <Transaction>2019.05.08 20:25:40.223,=E:\C++\Kursach\Unit10.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.234,=C:\Users\Евгений\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
   </Transactions>
 </BorlandProject>

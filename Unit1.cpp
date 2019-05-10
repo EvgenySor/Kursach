@@ -204,21 +204,21 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 			}
 
 			/*----Запись вектора структур в StringGrid----*/
-			for (int j = 1; j < StringGrid1->RowCount; j++)
+			for (int i = 1; i < StringGrid1->RowCount + 1; i++)
 			{
-				StringGrid1->Cells[0][j] = student[j - 1].surname;
-				StringGrid1->Cells[1][j] = student[j - 1].name;
-				StringGrid1->Cells[2][j] = student[j - 1].otchestvo;
-				StringGrid1->Cells[3][j] = student[j - 1].groupNumber;
-				StringGrid1->Cells[4][j] = student[j - 1].offset[0];
-				StringGrid1->Cells[5][j] = student[j - 1].offset[1];
-				StringGrid1->Cells[6][j] = student[j - 1].offset[2];
-				StringGrid1->Cells[7][j] = student[j - 1].offset[3];
-				StringGrid1->Cells[8][j] = student[j - 1].offset[4];
-				StringGrid1->Cells[9][j] = IntToStr(student[j - 1].exam[0]);
-				StringGrid1->Cells[10][j] = IntToStr(student[j - 1].exam[1]);
-				StringGrid1->Cells[11][j] = IntToStr(student[j - 1].exam[2]);
-				StringGrid1->Cells[12][j] = student[j - 1].defrayal;
+				StringGrid1->Cells[0][i] = student[i - 1].surname;
+				StringGrid1->Cells[1][i] = student[i - 1].name;
+				StringGrid1->Cells[2][i] = student[i - 1].otchestvo;
+				StringGrid1->Cells[3][i] = student[i - 1].groupNumber;
+				StringGrid1->Cells[4][i] = student[i - 1].offset[0];
+				StringGrid1->Cells[5][i] = student[i - 1].offset[1];
+				StringGrid1->Cells[6][i] = student[i - 1].offset[2];
+				StringGrid1->Cells[7][i] = student[i - 1].offset[3];
+				StringGrid1->Cells[8][i] = student[i - 1].offset[4];
+				StringGrid1->Cells[9][i] = IntToStr(student[i - 1].exam[0]);
+				StringGrid1->Cells[10][i] = IntToStr(student[i - 1].exam[1]);
+				StringGrid1->Cells[11][i] = IntToStr(student[i - 1].exam[2]);
+				StringGrid1->Cells[12][i] = student[i - 1].defrayal;
 			}
 		}
 		StringGrid1->RowCount++;
@@ -234,8 +234,9 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 		ComboBox7->Text = StringGrid1->Cells[9][0];
 		ComboBox8->Text = StringGrid1->Cells[10][0];
 		ComboBox9->Text = StringGrid1->Cells[11][0];
+
 	} else {
-		ShowMessage("Введите корректные данные!");
+		ShowMessage("Заполните все поля!");
 	}
 }
 //----------Подсчет общего среднего балла группы-----------------------------
@@ -454,10 +455,9 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 		Button2->Visible = False;
 	}
 	else
-    	Button2->Visible = False;
+		Button2->Visible = False;
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::N12Click(TObject *Sender)
 {
 	Form10->Show();
