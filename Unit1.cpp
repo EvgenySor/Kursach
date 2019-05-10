@@ -14,6 +14,7 @@
 #include "Unit8.h"
 #include "Unit9.h"
 #include "Unit10.h"
+#include "CalcFunction.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -67,85 +68,45 @@ void __fastcall TForm1::N7Click(TObject *Sender)
 {
 	Form5->ShowModal();
 }
-//----------Функция подсчета среднего балла бюджетников----------------------
-void calcAveragMarkBudget(int a, int *form1RowsCounter,
-	 float *averageMarkExam, int *sortRowsCounter, TStringGrid *StringGrid1)
-{
-	for (int i = 1; i < *form1RowsCounter; i++)
-		if(StringGrid1->Cells[12][i] == "Госбюджет")
-		{
-			*averageMarkExam += StrToFloat(StringGrid1->Cells[a][i]);
-			(*sortRowsCounter)++;
-		}
-	*averageMarkExam /= *sortRowsCounter;
-	*sortRowsCounter = 0;
-}
 //----------Подсчет среднего балла бюджетников-------------------------------
 void __fastcall TForm1::N8Click(TObject *Sender)
 {
 	Form6->Memo1->Clear();
 
-	int form1RowsCounter, sortRowsCounter = 0;                 // sortRowsCounter запоминает кол-во
-	float averageMarkExam = 0;  // Средний балл за экзамен    // считаных конструкцией if строк
+	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
+	float averageMarkExam = 0;                // считаных конструкцией if строк
 
 	form1RowsCounter = StrToInt(StringGrid1->RowCount);
 
-	calcAveragMarkBudget(9, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
 	Form6->Memo1->Lines->Add("\tСредний балл студентов(госбюджет)");
-	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
-	StringGrid1->Cells[9][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
-	averageMarkExam = 0;
-
-	calcAveragMarkBudget(10, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
-	StringGrid1->Cells[10][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
-	averageMarkExam = 0;
-
-	calcAveragMarkBudget(11, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
-	StringGrid1->Cells[11][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
-	averageMarkExam = 0;
+	for (int i = 9; i <= 11; i++)
+	{
+		calcAveragMarkBudget(i, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+		Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
+		StringGrid1->Cells[i][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+		averageMarkExam = 0;
+	}
 
 	Form6->ShowModal();
-}
-//----------Функция подсчета среднего балла платников------------------------
-void calcAveragMarkPay(int a, int *form1RowsCounter,
-	 float *averageMarkExam, int *sortRowsCounter, TStringGrid *StringGrid1)
-{
-	for (int i = 1; i < *form1RowsCounter; i++)
-		if(StringGrid1->Cells[12][i] == "Коммерческая")
-		{
-			*averageMarkExam += StrToFloat(StringGrid1->Cells[a][i]);
-			(*sortRowsCounter)++;
-		}
-	*averageMarkExam /= *sortRowsCounter;
-	*sortRowsCounter = 0;
 }
 //----------Подсчет среднего балла платников---------------------------------
 void __fastcall TForm1::N9Click(TObject *Sender)
 {
 	Form6->Memo1->Clear();
 
-	int form1RowsCounter, sortRowsCounter = 0;                  // sortRowsCounter запоминает кол-во
-	float averageMarkExam = 0;  // Средний балл за экзамен   // считаных конструкцией if строк
+	int form1RowsCounter, sortRowsCounter = 0;  // sortRowsCounter запоминает кол-во
+	float averageMarkExam = 0;                 // считаных конструкцией if строк
 
 	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 
-	calcAveragMarkPay(9, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
 	Form6->Memo1->Lines->Add("\tСредний балл студентов(коммерческ)");
-	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
-	StringGrid1->Cells[9][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
-	averageMarkExam = 0;
-
-	calcAveragMarkPay(10, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
-	StringGrid1->Cells[10][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
-	averageMarkExam = 0;
-
-	calcAveragMarkPay(11, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
-	Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
-	StringGrid1->Cells[11][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
-	averageMarkExam = 0;
+	for (int i = 9; i <= 11; i++)
+	{
+		calcAveragMarkPay(i, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+		Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
+		StringGrid1->Cells[i][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
+		averageMarkExam = 0;
+	}
 
 	Form6->ShowModal();
 }
