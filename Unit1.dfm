@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1043#1083#1072#1074#1085#1099#1081' '#1101#1082#1088#1072#1085
-  ClientHeight = 568
+  ClientHeight = 548
   ClientWidth = 917
   Color = clSilver
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object Form1: TForm1
   TextHeight = 13
   object StringGrid1: TStringGrid
     Left = 8
-    Top = 271
+    Top = 255
     Width = 897
     Height = 243
     ColCount = 13
@@ -33,7 +33,7 @@ object Form1: TForm1
     Left = 175
     Top = 8
     Width = 583
-    Height = 256
+    Height = 241
     Caption = #1051#1080#1095#1085#1099#1077' '#1076#1072#1085#1085#1099#1077
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
@@ -98,33 +98,33 @@ object Form1: TForm1
       Left = 97
       Top = 29
       Width = 121
-      Height = 29
+      Height = 27
       TabOrder = 0
     end
     object Edit2: TEdit
       Left = 97
       Top = 74
       Width = 121
-      Height = 29
+      Height = 28
       TabOrder = 1
     end
     object Edit3: TEdit
       Left = 97
       Top = 117
       Width = 121
-      Height = 29
+      Height = 27
       TabOrder = 2
     end
     object Edit4: TEdit
       Left = 97
       Top = 163
       Width = 121
-      Height = 29
+      Height = 27
       TabOrder = 3
     end
     object ComboBox1: TComboBox
       Left = 16
-      Top = 212
+      Top = 203
       Width = 202
       Height = 27
       Font.Charset = RUSSIAN_CHARSET
@@ -318,7 +318,7 @@ object Form1: TForm1
   end
   object Button2: TButton
     Left = 343
-    Top = 524
+    Top = 507
     Width = 225
     Height = 36
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1082#1086#1088#1088#1077#1082#1090#1080#1088#1086#1074#1082#1091
