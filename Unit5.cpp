@@ -4,8 +4,10 @@
 #pragma hdrstop
 
 #include "Unit1.h"
+#include "Unit2.h"
 #include "Unit3.h"
 #include "Unit5.h"
+#include "Unit6.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -15,7 +17,7 @@ __fastcall TForm5::TForm5(TComponent* Owner)
 	: TForm(Owner)
 {
 }
-//----------Вывод студентов по заданому номеру в таблицу---------------------
+//----------Вывод студентов по номеру группы в таблицу-----------------------
 void __fastcall TForm5::Button1Click(TObject *Sender)
 {
 	int form1RowsCounter, form3RowsCounter;
@@ -32,5 +34,66 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
 		}
 
 	Form3->Show(); Close();
+}
+//----------Подсчет общего балла группы--------------------------------------
+void __fastcall TForm5::Button2Click(TObject *Sender)
+{
+	float averageMarkGroup = 0, iterationCounter = 0;
+
+	for (int i = 0; i < Form1->StringGrid1->RowCount; i++)
+		if (Edit1->Text == Form1->StringGrid1->Cells[3][i])
+		{
+			averageMarkGroup += StrToFloat(Form1->StringGrid1->Cells[9][i]);
+			averageMarkGroup += StrToFloat(Form1->StringGrid1->Cells[10][i]);
+			averageMarkGroup += StrToFloat(Form1->StringGrid1->Cells[11][i]);
+			iterationCounter += 3;
+		}
+	averageMarkGroup /= iterationCounter;
+
+	Form6->Memo1->Lines->Add("Общий средний балл группы " + Edit1->Text + ": " +
+							FloatToStrF(averageMarkGroup,ffFixed,3,2));
+
+	Form6->Show(); Close();
+}
+//----------Подсчет среднего балла предметов выбранной группы----------------
+void __fastcall TForm5::Button3Click(TObject *Sender)
+{
+	float averageMarkExam1 = 0,
+		averageMarkExam2 = 0,
+		averageMarkExam3 = 0,
+		sortRow = 0;
+
+	for (int i = 1; i < Form1->StringGrid1->RowCount; i++)
+			if (Edit1->Text == Form1->StringGrid1->Cells[3][i])
+			{
+			   averageMarkExam1 += StrToInt(Form1->StringGrid1->Cells[9][i]);
+			   sortRow++;
+			}
+	averageMarkExam1 /= sortRow;
+	sortRow = 0;
+
+	for (int i = 1; i < Form1->StringGrid1->RowCount; i++)
+			if (Edit1->Text == Form1->StringGrid1->Cells[3][i])
+			{
+			   averageMarkExam2 += StrToInt(Form1->StringGrid1->Cells[10][i]);
+			   sortRow++;
+			}
+	averageMarkExam2 /= sortRow;
+	sortRow = 0;
+
+	for (int i = 1; i < Form1->StringGrid1->RowCount; i++)
+			if (Edit1->Text == Form1->StringGrid1->Cells[3][i])
+			{
+			   averageMarkExam3 += StrToInt(Form1->StringGrid1->Cells[11][i]);
+			   sortRow++;
+			}
+	averageMarkExam3 /= sortRow;
+	sortRow = 0;
+
+	Label2->Caption = averageMarkExam1;
+	Label3->Caption = averageMarkExam2;
+	Label4->Caption = averageMarkExam3;
+
+	Form2->Show(); Close();
 }
 

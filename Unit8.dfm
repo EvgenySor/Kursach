@@ -2,7 +2,7 @@ object Form8: TForm8
   Left = 0
   Top = 0
   Caption = #1059#1076#1072#1083#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072
-  ClientHeight = 246
+  ClientHeight = 210
   ClientWidth = 324
   Color = clSilver
   Font.Charset = DEFAULT_CHARSET

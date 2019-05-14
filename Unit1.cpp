@@ -10,9 +10,7 @@
 #include "Unit4.h"
 #include "Unit5.h"
 #include "Unit6.h"
-#include "Unit7.h"
 #include "Unit8.h"
-#include "Unit9.h"
 #include "Unit10.h"
 #include "CalcFunction.h"
 #include "TableFunction.h"
@@ -53,6 +51,7 @@ void __fastcall TForm1::N11Click(TObject *Sender)
 //----------Вывод списка студентов по номеру группы--------------------------
 void __fastcall TForm1::N7Click(TObject *Sender)
 {
+	Form5->Button1->Visible = true;
 	Form5->ShowModal();
 }
 //----------Подсчет среднего балла бюджетников-------------------------------
@@ -190,12 +189,15 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 //----------Подсчет общего среднего балла группы-----------------------------
 void __fastcall TForm1::N10Click(TObject *Sender)
 {
-	Form7->ShowModal();
+	Form6->Memo1->Clear();
+	Form5->Button2->Visible = true;
+	Form5->ShowModal();
 }
 //----------График-----------------------------------------------------------
 void __fastcall TForm1::N14Click(TObject *Sender)
 {
-	Form9->Show();
+	Form5->Button3->Visible = true;
+	Form5->Show();
 }
 //----------Закрашивание ячеек StringGrid------------------------------------
 void __fastcall TForm1::StringGrid1DrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
@@ -219,7 +221,7 @@ void __fastcall TForm1::StringGrid1DrawCell(TObject *Sender, int ACol, int ARow,
 		StringGrid1->Canvas->TextOut(x,y,StringGrid1->Cells[ACol][ARow]);
 	}
 }
-//----------Заполнить ячейки экзаменов и зачетов-----------------------------
+//----------Заполнить экзамены и зачеты--------------------------------------
 void __fastcall TForm1::N17Click(TObject *Sender)
 {
 	Form4->ShowModal();

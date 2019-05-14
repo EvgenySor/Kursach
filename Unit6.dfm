@@ -38,7 +38,7 @@ object Form6: TForm6
     OnClick = Button1Click
   end
   object SaveDialog1: TSaveDialog
-    Left = 136
-    Top = 48
+    Left = 16
+    Top = 16
   end
 end

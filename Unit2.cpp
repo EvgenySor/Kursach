@@ -4,7 +4,7 @@
 #pragma hdrstop
 
 #include "Unit2.h"
-#include "Unit9.h"
+#include "Unit5.h"
 #include "Unit1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -20,11 +20,11 @@ float data[3];
 //---------------------------------------------------------------------------
 void __fastcall TForm2::FormPaint(TObject *Sender)
 {
-	AnsiString Title = "График среднего балла группы " + Form9->Edit1->Text;
+	AnsiString Title = "График среднего балла группы " + Form5->Edit1->Text;
 
-	data[0] = StrToFloat(Form9->Label2->Caption);
-	data[1] = StrToFloat(Form9->Label3->Caption);
-	data[2] = StrToFloat(Form9->Label4->Caption);
+	data[0] = StrToFloat(Form5->Label2->Caption);
+	data[1] = StrToFloat(Form5->Label3->Caption);
+	data[2] = StrToFloat(Form5->Label4->Caption);
 
 	int x, y;
 	// заголовок
