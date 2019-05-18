@@ -98,28 +98,28 @@ object Form1: TForm1
       Left = 97
       Top = 29
       Width = 121
-      Height = 27
+      Height = 29
       TabOrder = 0
     end
     object Edit2: TEdit
       Left = 97
       Top = 74
       Width = 121
-      Height = 28
+      Height = 29
       TabOrder = 1
     end
     object Edit3: TEdit
       Left = 97
       Top = 117
       Width = 121
-      Height = 27
+      Height = 29
       TabOrder = 2
     end
     object Edit4: TEdit
       Left = 97
       Top = 163
       Width = 121
-      Height = 27
+      Height = 29
       TabOrder = 3
     end
     object ComboBox1: TComboBox
@@ -339,7 +339,7 @@ object Form1: TForm1
   end
   object OpenDialog1: TOpenDialog
     Filter = #1060#1072#1081#1083#1099' '#1076#1072#1085#1085#1099#1093'|*.txt|'#1042#1089#1077' '#1092#1072#1081#1083#1099'|*.*'
-    Title = #1057#1086#1079#1076#1072#1090#1100' '#1085#1086#1074#1099#1081' '#1092#1072#1081#1083
+    Title = #1042#1099#1073#1088#1072#1090#1100' '#1092#1072#1081#1083
     Left = 32
     Top = 32
   end

@@ -6,8 +6,5 @@
 #include <Vcl.Grids.hpp>
 //---------------------------------------------------------------------------
 #endif
-void calcAveragMarkBudget(int a, int *form1RowsCounter,
-	 float *averageMarkExam, int *sortRowsCounter, TStringGrid *StringGrid1);
-
-void calcAveragMarkPay(int a, int *form1RowsCounter,
-	 float *averageMarkExam, int *sortRowsCounter, TStringGrid *StringGrid1);
+void calcAveragMark(int a,
+	 float *averageMarkExam, int *sortRowsCounter, TStringGrid *StringGrid1, UnicodeString *pay);

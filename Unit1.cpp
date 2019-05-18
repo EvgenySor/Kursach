@@ -59,15 +59,15 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 {
 	Form6->Memo1->Clear();
 
-	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
-	float averageMarkExam = 0;                // считаных конструкцией if строк
+	UnicodeString pay = "Госбюджет";
 
-	form1RowsCounter = StrToInt(StringGrid1->RowCount);
+	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
+	float averageMarkExam = 0; // считаных конструкцией if строк
 
 	Form6->Memo1->Lines->Add("\tСредний балл студентов(госбюджет)");
 	for (int i = 9; i <= 11; i++)
 	{
-		calcAveragMarkBudget(i, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+		calcAveragMark(i, &averageMarkExam, &sortRowsCounter, StringGrid1, &pay);
 		Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
 		StringGrid1->Cells[i][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 		averageMarkExam = 0;
@@ -80,15 +80,15 @@ void __fastcall TForm1::N9Click(TObject *Sender)
 {
 	Form6->Memo1->Clear();
 
+	UnicodeString pay = "Коммерческая";
+
 	int form1RowsCounter, sortRowsCounter = 0;  // sortRowsCounter запоминает кол-во
 	float averageMarkExam = 0;                 // считаных конструкцией if строк
-
-	form1RowsCounter = StrToInt(Form1->StringGrid1->RowCount);
 
 	Form6->Memo1->Lines->Add("\tСредний балл студентов(коммерческ)");
 	for (int i = 9; i <= 11; i++)
 	{
-		calcAveragMarkPay(i, &form1RowsCounter, &averageMarkExam, &sortRowsCounter, StringGrid1);
+		calcAveragMark(i, &averageMarkExam, &sortRowsCounter, StringGrid1, &pay);
 		Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
 		StringGrid1->Cells[i][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 		averageMarkExam = 0;

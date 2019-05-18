@@ -1,0 +1,10 @@
+//---------------------------------------------------------------------------
+
+#ifndef CalcFunctionH
+#define CalcFunctionH
+
+#include <Vcl.Grids.hpp>
+//---------------------------------------------------------------------------
+#endif
+void calcAveragMark(int a, int *form1RowsCounter,
+	 float *averageMarkExam, int *sortRowsCounter, TStringGrid *StringGrid1, UnicodeString *pay);
