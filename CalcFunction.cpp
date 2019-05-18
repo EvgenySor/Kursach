@@ -22,3 +22,17 @@ void calcAveragMark(int a, float *averageMarkExam, int *sortRowsCounter,
 	*averageMarkExam /= *sortRowsCounter;
 	*sortRowsCounter = 0;
 }
+//----------Функция подсчета среднего балла группы---------------------------
+void calcAveragMark(float *averageMarkGroup, float *iterationCounter,
+	TStringGrid *StringGrid1, TEdit *Edit1)
+{
+	for (int i = 0; i < StringGrid1->RowCount; i++)
+		if (Edit1->Text == StringGrid1->Cells[3][i])
+		{
+			*averageMarkGroup += StrToFloat(StringGrid1->Cells[9][i]);
+			*averageMarkGroup += StrToFloat(StringGrid1->Cells[10][i]);
+			*averageMarkGroup += StrToFloat(StringGrid1->Cells[11][i]);
+			*iterationCounter += 3;
+		}
+	*averageMarkGroup /= *iterationCounter;
+}

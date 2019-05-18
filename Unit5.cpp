@@ -8,6 +8,7 @@
 #include "Unit3.h"
 #include "Unit5.h"
 #include "Unit6.h"
+#include "CalcFunction.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -40,18 +41,10 @@ void __fastcall TForm5::Button2Click(TObject *Sender)
 {
 	float averageMarkGroup = 0, iterationCounter = 0;
 
-	for (int i = 0; i < Form1->StringGrid1->RowCount; i++)
-		if (Edit1->Text == Form1->StringGrid1->Cells[3][i])
-		{
-			averageMarkGroup += StrToFloat(Form1->StringGrid1->Cells[9][i]);
-			averageMarkGroup += StrToFloat(Form1->StringGrid1->Cells[10][i]);
-			averageMarkGroup += StrToFloat(Form1->StringGrid1->Cells[11][i]);
-			iterationCounter += 3;
-		}
-	averageMarkGroup /= iterationCounter;
+	calcAveragMark(&averageMarkGroup, &iterationCounter, Form1->StringGrid1, Edit1);
 
 	Form6->Memo1->Lines->Add("Общий средний балл группы " + Edit1->Text + ": " +
-							FloatToStrF(averageMarkGroup,ffFixed,3,2));
+		FloatToStrF(averageMarkGroup,ffFixed,3,2));
 
 	Form6->Show(); Close();
 }

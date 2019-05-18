@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>Project1.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
@@ -180,12 +180,12 @@
             <DependentOn>Unit8.h</DependentOn>
             <BuildOrder>9</BuildOrder>
         </CppCompile>
-        <FormResources Include="Unit5.dfm"/>
         <FormResources Include="Unit4.dfm"/>
         <FormResources Include="Unit3.dfm"/>
-        <FormResources Include="Unit6.dfm"/>
-        <FormResources Include="Unit8.dfm"/>
         <FormResources Include="Unit2.dfm"/>
+        <FormResources Include="Unit8.dfm"/>
+        <FormResources Include="Unit6.dfm"/>
+        <FormResources Include="Unit5.dfm"/>
         <FormResources Include="Unit10.dfm"/>
         <FormResources Include="Unit1.dfm"/>
         <BuildConfiguration Include="Release">
