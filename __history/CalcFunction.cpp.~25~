@@ -1,0 +1,52 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "CalcFunction.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+//----------Функция подсчета среднего балла----------------------------------
+void calcAveragMark(int a, float *averageMarkExam, TStringGrid *S,
+	UnicodeString *pay)
+{
+	int sortRowsCounter = 0;
+
+	for (int i = 1; i < S->RowCount; i++)
+		if(S->Cells[12][i] == *pay)
+		{
+			*averageMarkExam += StrToFloat(S->Cells[a][i]);
+			sortRowsCounter++;
+		}
+	*averageMarkExam /= sortRowsCounter;
+}
+//----------Функция подсчета общего среднего балла группы--------------------
+void calcAveragMark(float *averageMarkGroup, TStringGrid *S,
+	TEdit *E)
+{
+	int iterationCounter = 0;
+
+	for (int i = 0; i < S->RowCount; i++)
+		if (E->Text == S->Cells[3][i])
+		{
+			*averageMarkGroup += StrToFloat(S->Cells[9][i]);
+			*averageMarkGroup += StrToFloat(S->Cells[10][i]);
+			*averageMarkGroup += StrToFloat(S->Cells[11][i]);
+			iterationCounter += 3;
+		}
+	*averageMarkGroup /= iterationCounter;
+}
+//----------Функция подсчета реднего балла по группе-------------------------
+float calcAverageMark(int a, TStringGrid *S, TEdit E)
+{
+	int sortRows = 0;
+	float averageMarkExam = 0;
+
+	for (int i = 1; i < S->RowCount; i++)
+			if (E->Text == S->Cells[3][i])
+			{
+			   averageMarkExam += StrToInt(S->Cells[a][i]);
+			   sortRow++;
+			}
+	averageMarkExam /= sortRow;
+}

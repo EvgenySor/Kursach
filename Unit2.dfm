@@ -14,4 +14,25 @@ object Form2: TForm2
   OnPaint = FormPaint
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 32
+    Top = 208
+    Width = 31
+    Height = 13
+    Caption = 'Label1'
+  end
+  object Label2: TLabel
+    Left = 122
+    Top = 208
+    Width = 31
+    Height = 13
+    Caption = 'Label2'
+  end
+  object Label3: TLabel
+    Left = 224
+    Top = 208
+    Width = 31
+    Height = 13
+    Caption = 'Label3'
+  end
 end

@@ -7,32 +7,47 @@
 #pragma package(smart_init)
 
 //----------Функция подсчета среднего балла----------------------------------
-void calcAveragMark(int a, float *averageMarkExam, int *sortRowsCounter,
-	TStringGrid *StringGrid1, UnicodeString *pay)
+void calcAveragMark(int a, float *averageMarkExam, TStringGrid *S,
+	UnicodeString *pay)
 {
-	int form1RowsCounter;
-	form1RowsCounter = StrToInt(StringGrid1->RowCount);
+	int sortRowsCounter = 0;
 
-	for (int i = 1; i < form1RowsCounter; i++)
-		if(StringGrid1->Cells[12][i] == *pay)
+	for (int i = 1; i < S->RowCount; i++)
+		if(S->Cells[12][i] == *pay)
 		{
-			*averageMarkExam += StrToFloat(StringGrid1->Cells[a][i]);
-			(*sortRowsCounter)++;
+			*averageMarkExam += StrToFloat(S->Cells[a][i]);
+			sortRowsCounter++;
 		}
-	*averageMarkExam /= *sortRowsCounter;
-	*sortRowsCounter = 0;
+	*averageMarkExam /= sortRowsCounter;
 }
-//----------Функция подсчета среднего балла группы---------------------------
-void calcAveragMark(float *averageMarkGroup, float *iterationCounter,
-	TStringGrid *StringGrid1, TEdit *Edit1)
+//----------Функция подсчета общего среднего балла группы--------------------
+void calcAveragMark(float *averageMarkGroup, TStringGrid *S,
+	TEdit *E)
 {
-	for (int i = 0; i < StringGrid1->RowCount; i++)
-		if (Edit1->Text == StringGrid1->Cells[3][i])
+	int iterationCounter = 0;
+
+	for (int i = 0; i < S->RowCount; i++)
+		if (E->Text == S->Cells[3][i])
 		{
-			*averageMarkGroup += StrToFloat(StringGrid1->Cells[9][i]);
-			*averageMarkGroup += StrToFloat(StringGrid1->Cells[10][i]);
-			*averageMarkGroup += StrToFloat(StringGrid1->Cells[11][i]);
-			*iterationCounter += 3;
+			*averageMarkGroup += StrToFloat(S->Cells[9][i]);
+			*averageMarkGroup += StrToFloat(S->Cells[10][i]);
+			*averageMarkGroup += StrToFloat(S->Cells[11][i]);
+			iterationCounter += 3;
 		}
-	*averageMarkGroup /= *iterationCounter;
+	*averageMarkGroup /= iterationCounter;
+}
+//----------Функция подсчета реднего балла по группе-------------------------
+float calcAveragMark(int a, TStringGrid *S, TEdit *E)
+{
+	int sortRows = 0;
+	float averageMarkExam = 0;
+
+	for (int i = 1; i < S->RowCount; i++)
+			if (E->Text == S->Cells[3][i])
+			{
+			   averageMarkExam += StrToInt(S->Cells[a][i]);
+			   sortRows++;
+			}
+	averageMarkExam /= sortRows;
+	return averageMarkExam;
 }

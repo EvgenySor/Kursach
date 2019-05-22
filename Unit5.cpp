@@ -39,53 +39,28 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
 //----------Подсчет общего балла группы--------------------------------------
 void __fastcall TForm5::Button2Click(TObject *Sender)
 {
-	float averageMarkGroup = 0, iterationCounter = 0;
+	try
+	{
+		float averageMarkGroup = 0;
 
-	calcAveragMark(&averageMarkGroup, &iterationCounter, Form1->StringGrid1, Edit1);
+		calcAveragMark(&averageMarkGroup, Form1->StringGrid1, Edit1);
 
-	Form6->Memo1->Lines->Add("Общий средний балл группы " + Edit1->Text + ": " +
-		FloatToStrF(averageMarkGroup,ffFixed,3,2));
+		Form6->Memo1->Lines->Add("Общий средний балл группы " + Edit1->Text + ": " +
+			FloatToStrF(averageMarkGroup,ffFixed,3,2));
 
-	Form6->Show(); Close();
+		Form6->Show(); Close();
+	}
+	catch(...)
+	{
+		ShowMessage("Ошибка, введены некорректные данные!");
+	}
 }
 //----------Подсчет среднего балла предметов выбранной группы----------------
 void __fastcall TForm5::Button3Click(TObject *Sender)
 {
-	float averageMarkExam1 = 0,
-		averageMarkExam2 = 0,
-		averageMarkExam3 = 0,
-		sortRow = 0;
-
-	for (int i = 1; i < Form1->StringGrid1->RowCount; i++)
-			if (Edit1->Text == Form1->StringGrid1->Cells[3][i])
-			{
-			   averageMarkExam1 += StrToInt(Form1->StringGrid1->Cells[9][i]);
-			   sortRow++;
-			}
-	averageMarkExam1 /= sortRow;
-	sortRow = 0;
-
-	for (int i = 1; i < Form1->StringGrid1->RowCount; i++)
-			if (Edit1->Text == Form1->StringGrid1->Cells[3][i])
-			{
-			   averageMarkExam2 += StrToInt(Form1->StringGrid1->Cells[10][i]);
-			   sortRow++;
-			}
-	averageMarkExam2 /= sortRow;
-	sortRow = 0;
-
-	for (int i = 1; i < Form1->StringGrid1->RowCount; i++)
-			if (Edit1->Text == Form1->StringGrid1->Cells[3][i])
-			{
-			   averageMarkExam3 += StrToInt(Form1->StringGrid1->Cells[11][i]);
-			   sortRow++;
-			}
-	averageMarkExam3 /= sortRow;
-	sortRow = 0;
-
-	Label2->Caption = averageMarkExam1;
-	Label3->Caption = averageMarkExam2;
-	Label4->Caption = averageMarkExam3;
+	Label2->Caption = FloatToStr(calcAveragMark(9, Form1->StringGrid1, Edit1));
+	Label3->Caption = FloatToStr(calcAveragMark(10, Form1->StringGrid1, Edit1));
+	Label4->Caption = FloatToStr(calcAveragMark(11, Form1->StringGrid1, Edit1));
 
 	Form2->Show(); Close();
 }

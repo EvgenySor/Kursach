@@ -93,9 +93,9 @@ void __fastcall TForm2::FormPaint(TObject *Sender)
 		x = x + wCol + MC;
 	}
 
-	ShowMessage("Левый график: " + Form1->StringGrid1->Cells[9][0] + "\n" +
-	"Центральный график: " + Form1->StringGrid1->Cells[10][0] + "\n" +
-	"Правый график: " + Form1->StringGrid1->Cells[11][0] + "\n");
+	Label1->Caption = Form1->StringGrid1->Cells[9][0];
+	Label2->Caption = Form1->StringGrid1->Cells[10][0];
+	Label3->Caption = Form1->StringGrid1->Cells[11][0];
 }
 //---------------------------------------------------------------------------
 

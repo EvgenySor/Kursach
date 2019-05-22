@@ -1,6 +1,5 @@
 ﻿//---------------------------------------------------------------------------
 #include <vcl.h>
-#include <stdio.h>
 #include <vector>
 #pragma hdrstop
 
@@ -61,13 +60,12 @@ void __fastcall TForm1::N8Click(TObject *Sender)
 
 	UnicodeString pay = "Госбюджет";
 
-	int form1RowsCounter, sortRowsCounter = 0; // sortRowsCounter запоминает кол-во
-	float averageMarkExam = 0; // считаных конструкцией if строк
+	float averageMarkExam = 0;
 
 	Form6->Memo1->Lines->Add("\tСредний балл студентов(госбюджет)");
 	for (int i = 9; i <= 11; i++)
 	{
-		calcAveragMark(i, &averageMarkExam, &sortRowsCounter, StringGrid1, &pay);
+		calcAveragMark(i, &averageMarkExam, StringGrid1, &pay);
 		Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
 		StringGrid1->Cells[i][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 		averageMarkExam = 0;
@@ -82,13 +80,12 @@ void __fastcall TForm1::N9Click(TObject *Sender)
 
 	UnicodeString pay = "Коммерческая";
 
-	int form1RowsCounter, sortRowsCounter = 0;  // sortRowsCounter запоминает кол-во
-	float averageMarkExam = 0;                 // считаных конструкцией if строк
+	float averageMarkExam = 0;
 
 	Form6->Memo1->Lines->Add("\tСредний балл студентов(коммерческ)");
 	for (int i = 9; i <= 11; i++)
 	{
-		calcAveragMark(i, &averageMarkExam, &sortRowsCounter, StringGrid1, &pay);
+		calcAveragMark(i, &averageMarkExam, StringGrid1, &pay);
 		Form6->Memo1->Lines->Add("Средний балл за экзамен по " +
 		StringGrid1->Cells[i][0] + ": " + FloatToStrF(averageMarkExam,ffFixed,3,2));
 		averageMarkExam = 0;
@@ -379,7 +376,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 			int imin = i;
 			for (unsigned j = i + 1; j < student.size(); j++ )
 				if ( student[j].surname < student[imin].surname ) imin = j;
-			TStudent a = student[i]; // обмен двух элементов массива структур
+			TStudent a = student[i];
 			student[i] = student[imin];
 			student[imin] = a;
 		}

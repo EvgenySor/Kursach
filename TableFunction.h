@@ -7,4 +7,4 @@
 //---------------------------------------------------------------------------
 #endif
 
-void fillTheTable(TStringGrid *StringGrid);
+void fillTheTable(TStringGrid *S);

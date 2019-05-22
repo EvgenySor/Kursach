@@ -6,19 +6,19 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-void fillTheTable(TStringGrid *StringGrid)
+void fillTheTable(TStringGrid *S)
 {
-	StringGrid->Cells[0][0] = "Фамилия";
-	StringGrid->Cells[1][0] = "Имя";
-	StringGrid->Cells[2][0] = "Отчество";
-	StringGrid->Cells[3][0] = "№ группы";
-	StringGrid->Cells[4][0] = "Зачет 1";
-	StringGrid->Cells[5][0] = "Зачет 2";
-	StringGrid->Cells[6][0] = "Зачет 3";
-	StringGrid->Cells[7][0] = "Зачет 4";
-	StringGrid->Cells[8][0] = "Зачет 5";
-	StringGrid->Cells[9][0] = "Экзамен 1";
-	StringGrid->Cells[10][0] = "Экзамен 2";
-	StringGrid->Cells[11][0] = "Экзамен 3";
-	StringGrid->Cells[12][0] = "Вид оплаты";
+	S->Cells[0][0] = "Фамилия";
+	S->Cells[1][0] = "Имя";
+	S->Cells[2][0] = "Отчество";
+	S->Cells[3][0] = "№ группы";
+	S->Cells[4][0] = "Зачет 1";
+	S->Cells[5][0] = "Зачет 2";
+	S->Cells[6][0] = "Зачет 3";
+	S->Cells[7][0] = "Зачет 4";
+	S->Cells[8][0] = "Зачет 5";
+	S->Cells[9][0] = "Экзамен 1";
+	S->Cells[10][0] = "Экзамен 2";
+	S->Cells[11][0] = "Экзамен 3";
+	S->Cells[12][0] = "Вид оплаты";
 }
